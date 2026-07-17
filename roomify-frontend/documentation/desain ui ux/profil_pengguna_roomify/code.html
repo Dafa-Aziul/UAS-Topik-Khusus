@@ -1,0 +1,316 @@
+<!DOCTYPE html><html class="light" lang="id"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Profil Pengguna - Roomify</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "error": "#ba1a1a",
+                    "surface-bright": "#faf8ff",
+                    "error-container": "#ffdad6",
+                    "primary-hover": "#1D4ED8",
+                    "surface-container": "#ededf9",
+                    "inverse-on-surface": "#f0f0fb",
+                    "surface-dim": "#d9d9e5",
+                    "inverse-surface": "#2e3039",
+                    "on-tertiary-container": "#ffede6",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-container-highest": "#e1e2ed",
+                    "on-secondary-fixed-variant": "#3a485b",
+                    "primary-fixed-dim": "#b4c5ff",
+                    "inverse-primary": "#b4c5ff",
+                    "surface-container-low": "#f3f3fe",
+                    "tertiary-fixed": "#ffdbcd",
+                    "surface-subtle": "#F1F5F9",
+                    "outline": "#737686",
+                    "surface-tint": "#0053db",
+                    "secondary-fixed": "#d5e3fc",
+                    "on-danger-container": "#7F1D1D",
+                    "text-muted": "#64748B",
+                    "tertiary-container": "#bc4800",
+                    "info-container": "#DBEAFE",
+                    "on-surface-variant": "#434655",
+                    "primary-container": "#2563eb",
+                    "on-primary-container": "#1E3A8A",
+                    "surface-variant": "#e1e2ed",
+                    "danger": "#B91C1C",
+                    "on-surface": "#191b23",
+                    "on-background": "#191b23",
+                    "success-container": "#DCFCE7",
+                    "on-success-container": "#14532D",
+                    "on-secondary-fixed": "#0d1c2e",
+                    "on-primary-fixed": "#00174b",
+                    "success": "#15803D",
+                    "primary-fixed": "#dbe1ff",
+                    "on-secondary-container": "#57657a",
+                    "text-primary": "#0F172A",
+                    "tertiary-fixed-dim": "#ffb596",
+                    "secondary-fixed-dim": "#b9c7df",
+                    "background": "#faf8ff",
+                    "on-tertiary": "#ffffff",
+                    "on-error": "#ffffff",
+                    "warning-container": "#FEF3C7",
+                    "on-error-container": "#93000a",
+                    "on-secondary": "#ffffff",
+                    "surface-container-high": "#e7e7f3",
+                    "on-warning-container": "#78350F",
+                    "warning": "#B45309",
+                    "on-tertiary-fixed-variant": "#7d2d00",
+                    "surface": "#faf8ff",
+                    "secondary": "#515f74",
+                    "secondary-container": "#d5e3fc",
+                    "outline-variant": "#c3c6d7",
+                    "primary": "#004ac6",
+                    "danger-container": "#FEE2E2",
+                    "on-tertiary-fixed": "#360f00",
+                    "neutral-container": "#F1F5F9",
+                    "tertiary": "#943700",
+                    "on-primary-fixed-variant": "#003ea8",
+                    "on-primary": "#ffffff",
+                    "border-strong": "#CBD5E1"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin-mobile": "16px",
+                    "4": "16px",
+                    "gutter": "16px",
+                    "3": "12px",
+                    "2": "8px",
+                    "8": "32px",
+                    "6": "24px",
+                    "margin-desktop": "24px",
+                    "10": "40px",
+                    "1": "4px",
+                    "5": "20px",
+                    "16": "64px",
+                    "12": "48px"
+            },
+            "fontFamily": {
+                    "display": ["Inter"],
+                    "label": ["Inter"],
+                    "body-md": ["Inter"],
+                    "h1": ["Inter"],
+                    "h2": ["Inter"],
+                    "h3": ["Inter"],
+                    "display-mobile": ["Inter"],
+                    "body-sm": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "h1-mobile": ["Inter"],
+                    "caption": ["Inter"]
+            },
+            "fontSize": {
+                    "display": ["2.25rem", {"lineHeight": "2.75rem", "letterSpacing": "-0.03em", "fontWeight": "700"}],
+                    "label": ["0.875rem", {"lineHeight": "1.25rem", "fontWeight": "600"}],
+                    "body-md": ["0.875rem", {"lineHeight": "1.375rem", "fontWeight": "400"}],
+                    "h1": ["2rem", {"lineHeight": "2.5rem", "letterSpacing": "-0.025em", "fontWeight": "700"}],
+                    "h2": ["1.5rem", {"lineHeight": "2rem", "letterSpacing": "-0.015em", "fontWeight": "700"}],
+                    "h3": ["1.25rem", {"lineHeight": "1.75rem", "fontWeight": "600"}],
+                    "display-mobile": ["28px", {"lineHeight": "34px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-sm": ["0.8125rem", {"lineHeight": "1.25rem", "fontWeight": "400"}],
+                    "body-lg": ["1rem", {"lineHeight": "1.625rem", "fontWeight": "400"}],
+                    "h1-mobile": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "700"}],
+                    "caption": ["0.75rem", {"lineHeight": "1rem", "fontWeight": "500"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen">
+<!-- Sidebar (Desktop Only) -->
+<aside class="hidden md:flex flex-col h-full w-64 p-6 fixed left-0 top-0 bg-surface dark:bg-on-background border-r border-outline-variant dark:border-outline">
+<div class="mb-10">
+<h2 class="text-h2 font-h2 text-primary dark:text-primary-fixed">Roomify</h2>
+<p class="text-body-sm text-on-surface-variant">Campus Management</p>
+</div>
+<nav class="flex-1 space-y-2">
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-secondary dark:text-secondary-fixed-dim hover:bg-surface-container-low dark:hover:bg-on-secondary-fixed-variant transition-colors duration-200" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-label text-label">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-secondary dark:text-secondary-fixed-dim hover:bg-surface-container-low dark:hover:bg-on-secondary-fixed-variant transition-colors duration-200" href="#">
+<span class="material-symbols-outlined">search</span>
+<span class="font-label text-label">Cari Ruangan</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-secondary dark:text-secondary-fixed-dim hover:bg-surface-container-low dark:hover:bg-on-secondary-fixed-variant transition-colors duration-200" href="#">
+<span class="material-symbols-outlined">history</span>
+<span class="font-label text-label">Peminjaman Saya</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-primary dark:text-primary-fixed font-bold border-r-4 border-primary bg-surface-container-low" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label text-label">Profil</span>
+</a>
+</nav>
+<div class="mt-auto">
+<button class="flex items-center gap-3 px-4 py-3 w-full rounded-lg text-danger hover:bg-danger-container transition-colors duration-200">
+<span class="material-symbols-outlined">logout</span>
+<span class="font-label text-label">Keluar</span>
+</button>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="md:ml-64 pb-24 md:pb-8">
+<!-- Top App Bar -->
+<header class="flex justify-between items-center h-16 px-6 bg-surface dark:bg-on-background border-b border-outline-variant dark:border-outline sticky top-0 z-40">
+<div class="flex items-center gap-4">
+<span class="md:hidden material-symbols-outlined text-primary">menu</span>
+<h1 class="text-h3 font-h3 text-primary dark:text-primary-fixed">Profil Pengguna</h1>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-primary transition-opacity duration-150">notifications</span>
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-primary transition-opacity duration-150">help</span>
+<div class="w-8 h-8 rounded-full bg-primary-container flex items-center justify-center text-on-primary-container font-bold overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A professional studio portrait of a university student with a friendly expression, wearing a clean academic casual outfit. The lighting is bright and even, reflecting a modern light-mode interface. The background is a soft, blurred campus hallway with clean architectural lines and a neutral palette, emphasizing a corporate and academic professionalism." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAEjmzULtTzftsygUKkBwzDibvwOzt95dTo85LJPVDZ_sgAC0fMG8hoof1p6sqOGQ6Ge3gZNn-DDZAJnQ0meY1G6CvHDjfsKw8c4AGKHe_IBRRFInMzKrdb-kqJWD9lj0_dV0yDZiGwSV3DuNkWMAVd90GpTbjkJHCuAv8z2LN630iSrlYmluOVw5dJbULCoWfxlLDsQOqeeB4bLXiN0eEzVrNKCY4LVDEG8tSb7ULesmBnG6TCJHhI2g">
+</div>
+</div>
+</header>
+<!-- Profile Content -->
+<div class="max-w-4xl mx-auto p-6 space-y-6">
+<!-- User Info Bento Section -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Avatar Card -->
+<div class="bg-surface p-8 rounded-xl border border-outline-variant flex flex-col items-center justify-center text-center space-y-4 md:col-span-1">
+<div class="relative group">
+<div class="w-32 h-32 rounded-full overflow-hidden border-4 border-primary-fixed ring-4 ring-surface-container shadow-lg">
+<img class="w-full h-full object-cover" data-alt="Close up of a young male professional student for a profile avatar. He has a confident and welcoming smile, representing the efficient and reliable nature of the Roomify brand. The photographic style is clean and high-end, with soft directional lighting that highlights facial features against a minimalist, light-grey background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAitJmNoWjw7wN9-eW3EYbfbsMaahVh6LjyIQ4Bi33uwaAE8GJIXLrroNDhtOZzQMEa6QZSqJmdhPPlT_i_icbCrj_SCn2k4lREo0JcaYt8pirEA2PoLvdJwfb-7lJV3JLyUXHKEY4eVkH1zF78rNNsbKl5WoTJBEMtUMWfmG4vrjkbWZ49eAtWeLHb1zYskmQ3fqWliq3QXWYbKj-qtI5I5nT_ZdHkBrjmsN-A4pFjKHX3YmlDfkrTrA">
+</div>
+<button class="absolute bottom-0 right-0 bg-primary text-on-primary p-2 rounded-full shadow-md hover:bg-primary-hover transition-colors">
+<span class="material-symbols-outlined text-[20px]">edit</span>
+</button>
+</div>
+<div>
+<h2 class="font-h2 text-h2 text-text-primary">Aditya Pratama</h2>
+<span class="px-3 py-1 bg-success-container text-on-success-container text-caption rounded-full font-bold">Mahasiswa Aktif</span>
+</div>
+</div>
+<!-- Bio/Details Card -->
+<div class="bg-surface p-6 rounded-xl border border-outline-variant md:col-span-2 space-y-6">
+<div class="flex justify-between items-center">
+<h3 class="font-h3 text-h3 text-primary">Informasi Personal</h3>
+<button class="flex items-center gap-1 text-primary hover:underline font-label text-label">
+<span class="material-symbols-outlined text-sm">edit</span>
+                            Edit Profil
+                        </button>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-y-6 gap-x-4">
+<div class="space-y-1">
+<p class="text-caption text-text-muted">NIM / NIP</p>
+<p class="font-body-lg text-body-lg text-on-surface font-medium">21040120140089</p>
+</div>
+<div class="space-y-1">
+<p class="text-caption text-text-muted">Email Kampus</p>
+<p class="font-body-lg text-body-lg text-on-surface font-medium">aditya.pratama@univ.ac.id</p>
+</div>
+<div class="space-y-1">
+<p class="text-caption text-text-muted">Jurusan / Unit</p>
+<p class="font-body-lg text-body-lg text-on-surface font-medium">Teknik Informatika</p>
+</div>
+<div class="space-y-1">
+<p class="text-caption text-text-muted">Fakultas</p>
+<p class="font-body-lg text-body-lg text-on-surface font-medium">Fakultas Teknik</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Settings Actions -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Change Password Card -->
+<div class="bg-surface p-6 rounded-xl border border-outline-variant space-y-4">
+<div class="flex items-center gap-3">
+<div class="p-2 bg-secondary-container rounded-lg">
+<span class="material-symbols-outlined text-primary">lock</span>
+</div>
+<h3 class="font-h3 text-h3 text-on-surface">Ubah Password</h3>
+</div>
+<p class="text-body-md text-on-surface-variant">Perbarui kata sandi Anda secara berkala untuk menjaga keamanan akun Roomify Anda.</p>
+<div class="pt-2">
+<button class="w-full md:w-auto px-6 py-3 bg-primary text-on-primary rounded-lg font-label text-label hover:bg-primary-hover transition-all flex items-center justify-center gap-2">
+                            Ubah Kata Sandi Sekarang
+                        </button>
+</div>
+</div>
+<!-- Account Security / Notification Prefs -->
+<div class="bg-surface p-6 rounded-xl border border-outline-variant space-y-4">
+<div class="flex items-center gap-3">
+<div class="p-2 bg-secondary-container rounded-lg">
+<span class="material-symbols-outlined text-primary">shield</span>
+</div>
+<h3 class="font-h3 text-h3 text-on-surface">Keamanan Akun</h3>
+</div>
+<div class="space-y-3">
+<div class="flex justify-between items-center py-2 border-b border-outline-variant">
+<span class="text-body-md">Verifikasi Dua Langkah</span>
+<div class="w-10 h-5 bg-outline-variant rounded-full relative cursor-pointer">
+<div class="absolute left-1 top-1 w-3 h-3 bg-white rounded-full"></div>
+</div>
+</div>
+<div class="flex justify-between items-center py-2">
+<span class="text-body-md">Notifikasi Email Booking</span>
+<div class="w-10 h-5 bg-success rounded-full relative cursor-pointer">
+<div class="absolute right-1 top-1 w-3 h-3 bg-white rounded-full"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Destructive Action Mobile -->
+<div class="md:hidden pt-4">
+<button class="w-full flex items-center justify-center gap-2 py-4 border-2 border-danger text-danger rounded-xl font-label text-label active:bg-danger-container transition-colors">
+<span class="material-symbols-outlined">logout</span>
+                    Keluar dari Akun
+                </button>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation Bar (Mobile Only) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-2 bg-surface border-t border-outline-variant shadow-lg md:hidden">
+<a class="flex flex-col items-center justify-center text-on-surface-variant" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-caption text-[10px]">Dashboard</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant" href="#">
+<span class="material-symbols-outlined">meeting_room</span>
+<span class="font-caption text-[10px]">Ruangan</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant" href="#">
+<span class="material-symbols-outlined">assignment</span>
+<span class="font-caption text-[10px]">Peminjaman</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-secondary-container text-primary rounded-xl px-3 py-1" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">person</span>
+<span class="font-caption text-[10px]">Profil</span>
+</a>
+</nav>
+<!-- Micro-interaction Script -->
+<script>
+        document.querySelectorAll('button, a').forEach(el => {
+            el.addEventListener('mousedown', () => {
+                el.style.transform = 'scale(0.98)';
+            });
+            el.addEventListener('mouseup', () => {
+                el.style.transform = 'scale(1)';
+            });
+            el.addEventListener('mouseleave', () => {
+                el.style.transform = 'scale(1)';
+            });
+        });
+    </script>
+</body></html>

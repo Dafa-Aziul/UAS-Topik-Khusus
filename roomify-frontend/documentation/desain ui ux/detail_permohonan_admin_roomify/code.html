@@ -1,0 +1,387 @@
+<!DOCTYPE html><html class="light" lang="id"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Roomify - Detail &amp; Keputusan Peminjaman</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(225, 226, 237, 0.5);
+        }
+    </style>
+<!-- Tailwind Config Verbatim -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "error": "#ba1a1a",
+                    "surface-bright": "#faf8ff",
+                    "error-container": "#ffdad6",
+                    "primary-hover": "#1D4ED8",
+                    "surface-container": "#ededf9",
+                    "inverse-on-surface": "#f0f0fb",
+                    "surface-dim": "#d9d9e5",
+                    "inverse-surface": "#2e3039",
+                    "on-tertiary-container": "#ffede6",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-container-highest": "#e1e2ed",
+                    "on-secondary-fixed-variant": "#3a485b",
+                    "primary-fixed-dim": "#b4c5ff",
+                    "inverse-primary": "#b4c5ff",
+                    "surface-container-low": "#f3f3fe",
+                    "tertiary-fixed": "#ffdbcd",
+                    "surface-subtle": "#F1F5F9",
+                    "outline": "#737686",
+                    "surface-tint": "#0053db",
+                    "secondary-fixed": "#d5e3fc",
+                    "on-danger-container": "#7F1D1D",
+                    "text-muted": "#64748B",
+                    "tertiary-container": "#bc4800",
+                    "info-container": "#DBEAFE",
+                    "on-surface-variant": "#434655",
+                    "primary-container": "#2563eb",
+                    "on-primary-container": "#1E3A8A",
+                    "surface-variant": "#e1e2ed",
+                    "danger": "#B91C1C",
+                    "on-surface": "#191b23",
+                    "on-background": "#191b23",
+                    "success-container": "#DCFCE7",
+                    "on-success-container": "#14532D",
+                    "on-secondary-fixed": "#0d1c2e",
+                    "on-primary-fixed": "#00174b",
+                    "success": "#15803D",
+                    "primary-fixed": "#dbe1ff",
+                    "on-secondary-container": "#57657a",
+                    "text-primary": "#0F172A",
+                    "tertiary-fixed-dim": "#ffb596",
+                    "secondary-fixed-dim": "#b9c7df",
+                    "background": "#faf8ff",
+                    "on-tertiary": "#ffffff",
+                    "on-error": "#ffffff",
+                    "warning-container": "#FEF3C7",
+                    "on-error-container": "#93000a",
+                    "on-secondary": "#ffffff",
+                    "surface-container-high": "#e7e7f3",
+                    "on-warning-container": "#78350F",
+                    "warning": "#B45309",
+                    "on-tertiary-fixed-variant": "#7d2d00",
+                    "surface": "#faf8ff",
+                    "secondary": "#515f74",
+                    "secondary-container": "#d5e3fc",
+                    "outline-variant": "#c3c6d7",
+                    "primary": "#004ac6",
+                    "danger-container": "#FEE2E2",
+                    "on-tertiary-fixed": "#360f00",
+                    "neutral-container": "#F1F5F9",
+                    "tertiary": "#943700",
+                    "on-primary-fixed-variant": "#003ea8",
+                    "on-primary": "#ffffff",
+                    "border-strong": "#CBD5E1"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin-mobile": "16px",
+                    "4": "16px",
+                    "gutter": "16px",
+                    "3": "12px",
+                    "2": "8px",
+                    "8": "32px",
+                    "6": "24px",
+                    "margin-desktop": "24px",
+                    "10": "40px",
+                    "1": "4px",
+                    "5": "20px",
+                    "16": "64px",
+                    "12": "48px"
+            },
+            "fontFamily": {
+                    "display": ["Inter"],
+                    "label": ["Inter"],
+                    "body-md": ["Inter"],
+                    "h1": ["Inter"],
+                    "h2": ["Inter"],
+                    "h3": ["Inter"],
+                    "display-mobile": ["Inter"],
+                    "body-sm": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "h1-mobile": ["Inter"],
+                    "caption": ["Inter"]
+            },
+            "fontSize": {
+                    "display": ["2.25rem", {"lineHeight": "2.75rem", "letterSpacing": "-0.03em", "fontWeight": "700"}],
+                    "label": ["0.875rem", {"lineHeight": "1.25rem", "fontWeight": "600"}],
+                    "body-md": ["0.875rem", {"lineHeight": "1.375rem", "fontWeight": "400"}],
+                    "h1": ["2rem", {"lineHeight": "2.5rem", "letterSpacing": "-0.025em", "fontWeight": "700"}],
+                    "h2": ["1.5rem", {"lineHeight": "2rem", "letterSpacing": "-0.015em", "fontWeight": "700"}],
+                    "h3": ["1.25rem", {"lineHeight": "1.75rem", "fontWeight": "600"}],
+                    "display-mobile": ["28px", {"lineHeight": "34px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-sm": ["0.8125rem", {"lineHeight": "1.25rem", "fontWeight": "400"}],
+                    "body-lg": ["1rem", {"lineHeight": "1.625rem", "fontWeight": "400"}],
+                    "h1-mobile": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "700"}],
+                    "caption": ["0.75rem", {"lineHeight": "1rem", "fontWeight": "500"}]
+            }
+          },
+        },
+      }
+    </script>
+</head>
+<body class="bg-background text-on-background min-h-screen">
+<!-- Sidebar (Shared Component) -->
+<aside class="fixed left-0 top-0 h-screen w-64 bg-surface border-r border-outline-variant flex flex-col p-6 z-40 hidden md:flex">
+<div class="mb-10">
+<h1 class="text-h2 font-h2 text-primary">Roomify</h1>
+<p class="font-body-sm text-body-sm text-secondary">Campus Management</p>
+</div>
+<nav class="flex-1 space-y-2">
+<a class="flex items-center gap-3 px-4 py-3 text-secondary hover:bg-surface-container-low transition-colors duration-200 rounded-lg" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-label text-label">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-secondary hover:bg-surface-container-low transition-colors duration-200 rounded-lg" href="#">
+<span class="material-symbols-outlined">search</span>
+<span class="font-label text-label">Cari Ruangan</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-primary font-bold border-r-4 border-primary bg-surface-container-low rounded-r-none rounded-lg" href="#">
+<span class="material-symbols-outlined">history</span>
+<span class="font-label text-label">Peminjaman Saya</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-secondary hover:bg-surface-container-low transition-colors duration-200 rounded-lg" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label text-label">Profil</span>
+</a>
+</nav>
+</aside>
+<!-- Top AppBar (Shared Component) -->
+<header class="flex justify-between items-center h-16 px-6 ml-0 md:ml-64 bg-surface border-b border-outline-variant fixed top-0 right-0 left-0 md:left-auto md:w-[calc(100%-256px)] z-30">
+<div class="flex items-center gap-4">
+<button class="md:hidden p-2">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<h2 class="text-h3 font-h3 text-primary">Detail Peminjaman</h2>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined cursor-pointer text-on-surface-variant hover:text-primary transition-opacity duration-150">notifications</span>
+<span class="material-symbols-outlined cursor-pointer text-on-surface-variant hover:text-primary transition-opacity duration-150">help</span>
+<div class="w-8 h-8 rounded-full overflow-hidden border border-outline-variant">
+<img class="w-full h-full object-cover" data-alt="A professional close-up portrait of a university administrator in a modern office setting. The lighting is soft and natural, emphasizing a trustworthy and efficient persona. The background features blurred academic bookshelves and a sleek computer monitor, maintaining a clean corporate aesthetic with blue and slate tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCa_IaHBTZd1pS-wTv_3lJP3XNO_2-bUUt01NYHHNOeaAG8jOxiqRtnACnC4b-l7xRf1_hAtWuCqV-trktURrxpq6ZtIh0KQPcSwNEXE_VDrnuAqaO-TTsjfEFY502AfSJ3KtD9y9J7jV03ddMSYbrvH-1NtvIMfYOJ65JK1dXD0zbrcy1lMrcrsU6Sh5B5k5yLNAcDjOgJIWoVAdSMmjvzfp6eiYUDmMKNHFCRtuxffLU0ZNxy858q7A">
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="pt-20 pb-24 md:pb-10 px-6 ml-0 md:ml-64 transition-all duration-300">
+<!-- Back Navigation -->
+<div class="mb-6 flex items-center gap-2 text-primary font-label text-label cursor-pointer group">
+<span class="material-symbols-outlined group-hover:-translate-x-1 transition-transform">arrow_back</span>
+<span>Kembali ke Daftar Peminjaman</span>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+<!-- Left Column: Booking Details -->
+<div class="lg:col-span-8 space-y-6">
+<!-- Bento Section: Student & Room Info -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="glass-card p-6 rounded-xl border border-outline-variant">
+<div class="flex items-center gap-4 mb-4">
+<div class="w-12 h-12 bg-primary-fixed rounded-lg flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">person</span>
+</div>
+<div>
+<p class="font-caption text-caption text-secondary uppercase tracking-wider">Mahasiswa Peminjam</p>
+<h3 class="font-h3 text-h3 text-text-primary">Aditya Pratama</h3>
+</div>
+</div>
+<div class="space-y-2 pt-2 border-t border-outline-variant/30">
+<p class="font-body-md text-body-md"><span class="font-bold">NIM:</span> 1202200045</p>
+<p class="font-body-md text-body-md"><span class="font-bold">Fakultas:</span> Informatika &amp; Rekayasa</p>
+<p class="font-body-md text-body-md"><span class="font-bold">Email:</span> aditya.p@university.ac.id</p>
+</div>
+</div>
+<div class="glass-card p-6 rounded-xl border border-outline-variant">
+<div class="flex items-center gap-4 mb-4">
+<div class="w-12 h-12 bg-secondary-container rounded-lg flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">meeting_room</span>
+</div>
+<div>
+<p class="font-caption text-caption text-secondary uppercase tracking-wider">Ruangan</p>
+<h3 class="font-h3 text-h3 text-text-primary">Lab Multimedia A.1</h3>
+</div>
+</div>
+<div class="space-y-2 pt-2 border-t border-outline-variant/30">
+<p class="font-body-md text-body-md"><span class="font-bold">Gedung:</span> Gedung Cyber, Lt. 3</p>
+<p class="font-body-md text-body-md"><span class="font-bold">Kapasitas:</span> 30 Orang</p>
+<p class="font-body-md text-body-md"><span class="font-bold">Fasilitas:</span> Projector, AC, High-end PCs</p>
+</div>
+</div>
+</div>
+<!-- Schedule & Purpose -->
+<div class="glass-card p-6 rounded-xl border border-outline-variant">
+<h4 class="font-label text-label text-secondary mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-body-lg">event_note</span>
+                        INFORMASI PENJADWALAN &amp; TUJUAN
+                    </h4>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+<div class="bg-surface-container-low p-4 rounded-lg">
+<p class="text-caption text-secondary font-caption">Tanggal</p>
+<p class="font-h3 text-h3 text-text-primary mt-1">24 Okt 2023</p>
+</div>
+<div class="bg-surface-container-low p-4 rounded-lg">
+<p class="text-caption text-secondary font-caption">Waktu Mulai</p>
+<p class="font-h3 text-h3 text-text-primary mt-1">09:00 WIB</p>
+</div>
+<div class="bg-surface-container-low p-4 rounded-lg">
+<p class="text-caption text-secondary font-caption">Waktu Selesai</p>
+<p class="font-h3 text-h3 text-text-primary mt-1">13:00 WIB</p>
+</div>
+</div>
+<div class="space-y-4">
+<div>
+<p class="font-label text-label text-text-primary mb-1">Tujuan Peminjaman</p>
+<div class="p-4 bg-surface rounded-lg border border-outline-variant italic text-on-surface-variant font-body-md text-body-md">
+                                "Penyelenggaraan workshop desain UI/UX untuk anggota Himpunan Mahasiswa Informatika. Kami memerlukan akses ke komputer dengan software Adobe Creative Cloud yang tersedia di Lab Multimedia."
+                            </div>
+</div>
+<div>
+<p class="font-label text-label text-text-primary mb-2">Daftar Peserta (Est. 25 Orang)</p>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1 bg-surface-variant text-on-surface-variant rounded-full text-caption font-caption">HIMA Informatika</span>
+<span class="px-3 py-1 bg-surface-variant text-on-surface-variant rounded-full text-caption font-caption">Mahasiswa Angkatan 2022</span>
+<span class="px-3 py-1 bg-surface-variant text-on-surface-variant rounded-full text-caption font-caption">Dosen Pendamping: Dr. Irwan</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Room Visualization (Atmospheric Card) -->
+<div class="relative h-64 rounded-xl overflow-hidden group">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A high-end, wide-angle interior photograph of a modern university computer lab. The room features ergonomic chairs, rows of sleek iMac computers, and large windows letting in soft daylight. The aesthetic is clean, academic, and technologically advanced with a professional blue and white color palette. Subtle reflections on the screen surfaces add a layer of realism and depth." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3O_1a5QbQbLf-FmChWBCU_v4FH6HxY1weS5v_HQ2pK7MuX6dGQu3BK30LDqHuogxkWgVhgFKq23QpfmhWfrCEv3mMoNoQofFO58uF5k8QW1etcT_C2TeZIOXYKPqimGJBddqL14eGiJIrwyaJhRpYwfN0HfZol1QNDwO6CDhsOIQtqu0kyZFCGD-pTIwEoElW68YuXzxl0st_bkxJU-AkharRaaIkhtlzQvq8Q1seKn3mKvkYUwVc9g">
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-6">
+<div class="text-white">
+<p class="text-caption font-caption opacity-80">Pratinjau Ruangan Terkini</p>
+<h4 class="text-h3 font-h3">Lab Multimedia A.1</h4>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Admin Actions & Decision -->
+<div class="lg:col-span-4">
+<div class="sticky top-20 space-y-6">
+<!-- Status Card -->
+<div class="glass-card p-6 rounded-xl border border-outline-variant shadow-sm">
+<div class="flex justify-between items-center mb-6">
+<h4 class="font-h3 text-h3 text-text-primary">Keputusan Admin</h4>
+<span class="px-4 py-1 bg-warning-container text-on-warning-container rounded-full text-caption font-label flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">pending</span>
+                                Menunggu
+                            </span>
+</div>
+<div class="mb-6">
+<label class="block font-label text-label text-text-primary mb-2" for="adminNote">Catatan Admin</label>
+<textarea class="w-full p-4 rounded-lg border border-outline-variant focus:ring-2 focus:ring-primary focus:border-primary font-body-md text-body-md resize-none" id="adminNote" placeholder="Tuliskan alasan setuju atau penolakan di sini..." rows="5"></textarea>
+</div>
+<!-- Warning for Rejection -->
+<div class="hidden flex gap-3 p-4 bg-danger-container text-on-danger-container rounded-lg mb-6 border border-danger/20 animate-pulse" id="rejectionWarning">
+<span class="material-symbols-outlined">warning</span>
+<p class="font-body-sm text-body-sm">
+<span class="font-bold">Peringatan:</span> Alasan wajib diisi jika Anda ingin menolak permohonan ini.
+                            </p>
+</div>
+<div class="space-y-3">
+<button class="w-full h-12 bg-primary hover:bg-primary-hover text-white rounded-lg font-label text-label transition-all flex items-center justify-center gap-2 shadow-md hover:shadow-lg active:scale-[0.98]" onclick="handleApproval()">
+<span class="material-symbols-outlined">check_circle</span>
+                                Setujui Permohonan
+                            </button>
+<button class="w-full h-12 border border-danger text-danger hover:bg-danger-container rounded-lg font-label text-label transition-all flex items-center justify-center gap-2 active:scale-[0.98]" onclick="handleRejection()">
+<span class="material-symbols-outlined">cancel</span>
+                                Tolak Permohonan
+                            </button>
+</div>
+</div>
+<!-- Log Activity Card -->
+<div class="p-6 bg-surface-container rounded-xl border border-outline-variant/50">
+<h5 class="font-label text-label text-secondary mb-4">RIWAYAT AKTIVITAS</h5>
+<div class="space-y-4">
+<div class="flex gap-3">
+<div class="relative">
+<div class="w-2 h-2 rounded-full bg-success mt-1.5"></div>
+<div class="absolute top-4 left-1 w-0.5 h-8 bg-outline-variant"></div>
+</div>
+<div>
+<p class="font-body-sm text-body-sm text-text-primary">Permohonan dibuat oleh Aditya</p>
+<p class="text-caption font-caption text-secondary">22 Okt, 14:20</p>
+</div>
+</div>
+<div class="flex gap-3">
+<div class="w-2 h-2 rounded-full bg-primary mt-1.5"></div>
+<div>
+<p class="font-body-sm text-body-sm text-text-primary">Diverifikasi oleh Sistem</p>
+<p class="text-caption font-caption text-secondary">22 Okt, 14:21</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation (Shared Component - Mobile Only) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-2 bg-surface border-t border-outline-variant shadow-lg md:hidden">
+<div class="flex flex-col items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-caption text-caption-mobile">Dashboard</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined">meeting_room</span>
+<span class="font-caption text-caption-mobile">Ruangan</span>
+</div>
+<div class="flex flex-col items-center justify-center bg-secondary-container text-primary rounded-xl px-3 py-1 scale-95 transition-transform duration-100">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">assignment</span>
+<span class="font-caption text-caption-mobile">Peminjaman</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined">person</span>
+<span class="font-caption text-caption-mobile">Profil</span>
+</div>
+</nav>
+<script>
+        function handleApproval() {
+            const note = document.getElementById('adminNote').value;
+            alert('Permohonan Disetujui. ' + (note ? 'Catatan: ' + note : ''));
+        }
+
+        function handleRejection() {
+            const noteField = document.getElementById('adminNote');
+            const warning = document.getElementById('rejectionWarning');
+            
+            if (!noteField.value.trim()) {
+                warning.classList.remove('hidden');
+                noteField.classList.add('border-danger', 'ring-1', 'ring-danger');
+                noteField.focus();
+            } else {
+                warning.classList.add('hidden');
+                noteField.classList.remove('border-danger', 'ring-1', 'ring-danger');
+                alert('Permohonan Ditolak dengan alasan: ' + noteField.value);
+            }
+        }
+
+        // Hide warning as user types
+        document.getElementById('adminNote').addEventListener('input', function() {
+            if (this.value.trim()) {
+                document.getElementById('rejectionWarning').classList.add('hidden');
+                this.classList.remove('border-danger', 'ring-1', 'ring-danger');
+            }
+        });
+    </script>
+</body></html>

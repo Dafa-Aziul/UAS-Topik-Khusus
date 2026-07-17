@@ -1,0 +1,406 @@
+<!DOCTYPE html><html lang="id"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Detail Ruangan (Admin) - Roomify</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary": "#943700",
+                    "error": "#ba1a1a",
+                    "secondary-fixed-dim": "#b9c7df",
+                    "on-primary-fixed-variant": "#003ea8",
+                    "on-success-container": "#14532D",
+                    "on-primary": "#ffffff",
+                    "on-primary-container": "#eeefff",
+                    "on-error": "#ffffff",
+                    "warning-container": "#FEF3C7",
+                    "secondary-container": "#d5e3fc",
+                    "on-surface": "#191b23",
+                    "neutral-container": "#F1F5F9",
+                    "info-container": "#DBEAFE",
+                    "inverse-primary": "#b4c5ff",
+                    "surface-tint": "#0053db",
+                    "secondary-fixed": "#d5e3fc",
+                    "on-tertiary-fixed-variant": "#7d2d00",
+                    "surface-container-high": "#e7e7f3",
+                    "surface-dim": "#d9d9e5",
+                    "outline-variant": "#c3c6d7",
+                    "surface-subtle": "#F1F5F9",
+                    "outline": "#737686",
+                    "on-secondary-fixed": "#0d1c2e",
+                    "danger-container": "#FEE2E2",
+                    "danger": "#B91C1C",
+                    "surface-bright": "#faf8ff",
+                    "on-tertiary-fixed": "#360f00",
+                    "surface-container-highest": "#e1e2ed",
+                    "success": "#15803D",
+                    "on-background": "#191b23",
+                    "tertiary-fixed": "#ffdbcd",
+                    "inverse-on-surface": "#f0f0fb",
+                    "on-surface-variant": "#434655",
+                    "success-container": "#DCFCE7",
+                    "error-container": "#ffdad6",
+                    "on-error-container": "#93000a",
+                    "on-tertiary": "#ffffff",
+                    "text-muted": "#64748B",
+                    "tertiary-fixed-dim": "#ffb596",
+                    "primary-hover": "#1D4ED8",
+                    "on-secondary": "#ffffff",
+                    "surface-container-lowest": "#ffffff",
+                    "secondary": "#515f74",
+                    "primary-fixed": "#dbe1ff",
+                    "primary-container": "#2563eb",
+                    "on-warning-container": "#78350F",
+                    "border-strong": "#CBD5E1",
+                    "primary-fixed-dim": "#b4c5ff",
+                    "on-secondary-container": "#57657a",
+                    "warning": "#B45309",
+                    "text-primary": "#0F172A",
+                    "tertiary-container": "#bc4800",
+                    "surface-container": "#ededf9",
+                    "on-primary-fixed": "#00174b",
+                    "background": "#faf8ff",
+                    "on-tertiary-container": "#ffede6",
+                    "on-secondary-fixed-variant": "#3a485b",
+                    "surface": "#faf8ff",
+                    "inverse-surface": "#2e3039",
+                    "surface-container-low": "#f3f3fe",
+                    "on-danger-container": "#7F1D1D",
+                    "surface-variant": "#e1e2ed",
+                    "primary": "#004ac6"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "5": "20px",
+                    "margin-mobile": "16px",
+                    "6": "24px",
+                    "margin-desktop": "24px",
+                    "gutter": "16px",
+                    "12": "48px",
+                    "3": "12px",
+                    "8": "32px",
+                    "16": "64px",
+                    "4": "16px",
+                    "2": "8px",
+                    "10": "40px",
+                    "1": "4px"
+            },
+            "fontFamily": {
+                    "display-mobile": ["Inter"],
+                    "h1": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "display": ["Inter"],
+                    "body-sm": ["Inter"],
+                    "h2": ["Inter"],
+                    "body-md": ["Inter"],
+                    "label": ["Inter"],
+                    "h3": ["Inter"],
+                    "caption": ["Inter"],
+                    "h1-mobile": ["Inter"]
+            },
+            "fontSize": {
+                    "display-mobile": ["28px", {"lineHeight": "34px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "h1": ["2rem", {"lineHeight": "2.5rem", "letterSpacing": "-0.025em", "fontWeight": "700"}],
+                    "body-lg": ["1rem", {"lineHeight": "1.625rem", "fontWeight": "400"}],
+                    "display": ["2.25rem", {"lineHeight": "2.75rem", "letterSpacing": "-0.03em", "fontWeight": "700"}],
+                    "body-sm": ["0.8125rem", {"lineHeight": "1.25rem", "fontWeight": "400"}],
+                    "h2": ["1.5rem", {"lineHeight": "2rem", "letterSpacing": "-0.015em", "fontWeight": "700"}],
+                    "body-md": ["0.875rem", {"lineHeight": "1.375rem", "fontWeight": "400"}],
+                    "label": ["0.875rem", {"lineHeight": "1.25rem", "fontWeight": "600"}],
+                    "h3": ["1.25rem", {"lineHeight": "1.75rem", "fontWeight": "600"}],
+                    "caption": ["0.75rem", {"lineHeight": "1rem", "fontWeight": "500"}],
+                    "h1-mobile": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .custom-scrollbar::-webkit-scrollbar { width: 6px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #CBD5E1; border-radius: 10px; }
+    </style>
+</head>
+<body class="bg-background text-on-surface">
+<!-- Side Navigation Bar -->
+<aside class="fixed left-0 top-0 h-screen w-64 bg-surface border-r border-outline-variant flex flex-col py-6 px-4 z-20">
+<div class="mb-10 px-2">
+<h1 class="font-h2 text-h2 text-primary tracking-tight">Roomify</h1>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Admin Portal</p>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container-low transition-colors" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-body-md text-body-md">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-primary font-bold border-r-4 border-primary bg-secondary-container/30 transition-colors" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">search</span>
+<span class="font-body-md text-body-md">Cari Ruangan</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container-low transition-colors" href="#">
+<span class="material-symbols-outlined">event_note</span>
+<span class="font-body-md text-body-md">Peminjaman Saya</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container-low transition-colors" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-body-md text-body-md">Profil</span>
+</a>
+</nav>
+<div class="pt-6 border-t border-outline-variant">
+<button class="flex items-center gap-3 px-4 py-3 w-full rounded-lg text-error hover:bg-error-container/10 transition-colors">
+<span class="material-symbols-outlined">logout</span>
+<span class="font-body-md text-body-md">Keluar</span>
+</button>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="ml-64 min-h-screen pb-20">
+<!-- Top App Bar -->
+<header class="sticky top-0 z-10 h-16 bg-surface border-b border-outline-variant flex justify-between items-center px-8">
+<div class="flex items-center gap-4">
+<button class="p-2 hover:bg-surface-variant rounded-full transition-transform active:scale-95">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<h2 class="font-h3 text-h3 text-primary">Detail Ruangan</h2>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative group">
+<button class="hover:bg-surface-variant rounded-full p-2 transition-transform active:scale-95">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<span class="absolute top-2 right-2 w-2 h-2 bg-error rounded-full border border-surface"></span>
+</div>
+<button class="hover:bg-surface-variant rounded-full p-2 transition-transform active:scale-95">
+<span class="material-symbols-outlined">settings</span>
+</button>
+<div class="w-8 h-8 rounded-full bg-primary-fixed overflow-hidden border border-outline-variant">
+<img class="w-full h-full object-cover" data-alt="A professional headshot of a campus administrator in a modern office setting. The lighting is soft and even, highlighting a friendly yet authoritative expression. The background is slightly blurred, showing a clean, high-tech academic environment with cool blue and white tones consistent with the Roomify brand." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCEtJ6h0Kf-k1esVAViUJnE8vJGBxPmFur4QYpz0xGL3w9wkllxG2UQX52CCMJRW9tS2ZZSihxPpGzo6SABbDYt6f0yyW7-JgwZU-oIaVz8-kHvjwQYSl6fvLBPkTdbQr9ezISD41rhosBHVqEk2sRcTyfhm4Dxprkmga-VLXCD-kOT65rRfXg75fMVV95Zx-DN2LxbkdID3zxbU4LV3xRE8xSm8QBbs-_4b8SUN_FwuiTwUyn8WgTqsA">
+</div>
+</div>
+</header>
+<!-- Content Body -->
+<div class="max-w-6xl mx-auto p-8">
+<!-- Breadcrumbs -->
+<nav class="flex items-center gap-2 mb-6 text-on-surface-variant font-caption text-caption">
+<a class="hover:text-primary" href="#">Manajemen Ruangan</a>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+<span class="text-on-surface">Auditorium Pusat</span>
+</nav>
+<!-- Room Identity Header -->
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-8 bg-surface-container-lowest p-6 rounded-xl border border-outline-variant shadow-sm">
+<div>
+<div class="flex items-center gap-3 mb-1">
+<h2 class="font-h2 text-h2 text-text-primary">Auditorium Pusat</h2>
+<span class="px-3 py-1 bg-success-container text-on-success-container rounded-full font-label text-caption flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                            Tersedia
+                        </span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">ID Ruangan: R-AUDI-001 • Gedung Rektorat Lt. 2</p>
+</div>
+<div class="flex gap-3">
+<button class="px-4 py-2 border border-outline rounded-lg font-label text-label hover:bg-surface-container-high transition-colors">Pratinjau Publik</button>
+<button class="px-4 py-2 bg-danger text-on-primary rounded-lg font-label text-label hover:bg-opacity-90 transition-shadow">Nonaktifkan Ruangan</button>
+</div>
+</div>
+<!-- Bento Layout Content -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+<!-- Left Column: Form Details -->
+<div class="lg:col-span-2 space-y-6">
+<!-- Basic Information Card -->
+<section class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant">
+<h3 class="font-h3 text-h3 mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">info</span>
+                            Informasi Dasar
+                        </h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+<div class="flex flex-col gap-1.5">
+<label class="font-label text-label text-on-surface">Nama Ruangan</label>
+<input class="px-4 py-2.5 rounded-lg border border-outline-variant focus:ring-2 focus:ring-primary focus:border-primary bg-white transition-all font-body-md" placeholder="Contoh: Ruang Rapat A" type="text" value="Auditorium Pusat">
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="font-label text-label text-on-surface">Kode Ruangan</label>
+<input class="px-4 py-2.5 rounded-lg border border-outline-variant focus:ring-2 focus:ring-primary focus:border-primary bg-white transition-all font-body-md" type="text" value="R-AUDI-001">
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="font-label text-label text-on-surface">Gedung / Lokasi</label>
+<select class="px-4 py-2.5 rounded-lg border border-outline-variant focus:ring-2 focus:ring-primary focus:border-primary bg-white transition-all font-body-md">
+<option>Gedung Rektorat</option>
+<option>Gedung Teknik Sipil</option>
+<option>Gedung Perpustakaan</option>
+</select>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="font-label text-label text-on-surface">Lantai</label>
+<input class="px-4 py-2.5 rounded-lg border border-outline-variant focus:ring-2 focus:ring-primary focus:border-primary bg-white transition-all font-body-md" type="number" value="2">
+</div>
+<div class="flex flex-col gap-1.5 md:col-span-2">
+<label class="font-label text-label text-on-surface">Kapasitas (Orang)</label>
+<div class="relative">
+<span class="absolute left-4 top-1/2 -translate-y-1/2 material-symbols-outlined text-on-surface-variant">groups</span>
+<input class="pl-12 pr-4 py-2.5 w-full rounded-lg border border-outline-variant focus:ring-2 focus:ring-primary focus:border-primary bg-white transition-all font-body-md" type="number" value="250">
+</div>
+</div>
+</div>
+</section>
+<!-- Facilities Card -->
+<section class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant">
+<h3 class="font-h3 text-h3 mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">extension</span>
+                            Fasilitas Ruangan
+                        </h3>
+<div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+<label class="flex items-center gap-3 p-3 rounded-xl border border-outline-variant bg-surface hover:border-primary cursor-pointer transition-all">
+<input checked="" class="w-5 h-5 rounded text-primary focus:ring-primary" type="checkbox">
+<div class="flex flex-col">
+<span class="font-label text-label">Air Conditioner</span>
+<span class="text-caption font-caption text-on-surface-variant">AC Central</span>
+</div>
+</label>
+<label class="flex items-center gap-3 p-3 rounded-xl border border-outline-variant bg-surface hover:border-primary cursor-pointer transition-all">
+<input checked="" class="w-5 h-5 rounded text-primary focus:ring-primary" type="checkbox">
+<div class="flex flex-col">
+<span class="font-label text-label">Proyektor</span>
+<span class="text-caption font-caption text-on-surface-variant">4K Resolution</span>
+</div>
+</label>
+<label class="flex items-center gap-3 p-3 rounded-xl border border-outline-variant bg-surface hover:border-primary cursor-pointer transition-all">
+<input checked="" class="w-5 h-5 rounded text-primary focus:ring-primary" type="checkbox">
+<div class="flex flex-col">
+<span class="font-label text-label">Sound System</span>
+<span class="text-caption font-caption text-on-surface-variant">Surround 7.1</span>
+</div>
+</label>
+<label class="flex items-center gap-3 p-3 rounded-xl border border-outline-variant bg-surface hover:border-primary cursor-pointer transition-all">
+<input checked="" class="w-5 h-5 rounded text-primary focus:ring-primary" type="checkbox">
+<div class="flex flex-col">
+<span class="font-label text-label">WiFi</span>
+<span class="text-caption font-caption text-on-surface-variant">Kecepatan Tinggi</span>
+</div>
+</label>
+<label class="flex items-center gap-3 p-3 rounded-xl border border-outline-variant bg-surface hover:border-primary cursor-pointer transition-all">
+<input class="w-5 h-5 rounded text-primary focus:ring-primary" type="checkbox">
+<div class="flex flex-col">
+<span class="font-label text-label">Papan Tulis</span>
+<span class="text-caption font-caption text-on-surface-variant">Whiteboard/Digital</span>
+</div>
+</label>
+<button class="flex items-center justify-center gap-2 p-3 rounded-xl border border-dashed border-outline text-on-surface-variant hover:bg-surface-variant/50 transition-all">
+<span class="material-symbols-outlined text-[20px]">add_circle</span>
+<span class="font-label text-label">Tambah</span>
+</button>
+</div>
+</section>
+</div>
+<!-- Right Column: Status & Media -->
+<div class="space-y-6">
+<!-- Status Toggle Card -->
+<section class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant">
+<h3 class="font-h3 text-h3 mb-4">Status Operasional</h3>
+<div class="space-y-3">
+<button class="w-full flex items-center justify-between p-4 rounded-xl border-2 border-primary bg-primary-fixed text-on-primary-fixed shadow-sm">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-label text-label">Tersedia</span>
+</div>
+<span class="material-symbols-outlined">radio_button_checked</span>
+</button>
+<button class="w-full flex items-center justify-between p-4 rounded-xl border border-outline-variant bg-surface text-on-surface hover:bg-surface-container-low transition-colors">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-warning">engineering</span>
+<span class="font-label text-label">Maintenance</span>
+</div>
+<span class="material-symbols-outlined">radio_button_unchecked</span>
+</button>
+<button class="w-full flex items-center justify-between p-4 rounded-xl border border-outline-variant bg-surface text-on-surface hover:bg-surface-container-low transition-colors">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-danger">cancel</span>
+<span class="font-label text-label">Tidak Aktif</span>
+</div>
+<span class="material-symbols-outlined">radio_button_unchecked</span>
+</button>
+</div>
+</section>
+<!-- Media Upload Card -->
+<section class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant">
+<h3 class="font-h3 text-h3 mb-4">Foto Ruangan</h3>
+<div class="relative group aspect-video rounded-lg overflow-hidden border border-outline-variant mb-4">
+<img class="w-full h-full object-cover" data-alt="A grand, wide-angle interior shot of a modern campus auditorium. The room features tiered mahogany seating, a large digital projection screen, and integrated LED ceiling panels providing bright, clean white light. The atmosphere is professional and high-tech, with crisp details on the acoustics panels and carpeting. The color palette emphasizes deep blues and warm wood tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAF_t08EPTgCVeZT03tEfcB7t4ATsAGn_ZARhx1PPsymbGOWiTKWEJ5jJ6XpDB12oqL4TYtLpkd1jWZ-DThJdDrNoaiOtMDHT-ZR51Da4E11H7ndMbNRH4zvwu2Tq3wlLgRzfNSN3G09bCvG8wIxm5IiKQ6ClqSnLJfx0IHCMIVWFRVj04SVKmnvS2RjWEP8-wSaUYtvARAHMs09uMmfEiqIEM1CVUvpdNv4yNDnx5rLuKdie8TV6L2Ug">
+<div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-4">
+<button class="p-2 bg-white rounded-full text-on-surface shadow-lg hover:scale-110 transition-transform">
+<span class="material-symbols-outlined">visibility</span>
+</button>
+<button class="p-2 bg-white rounded-full text-danger shadow-lg hover:scale-110 transition-transform">
+<span class="material-symbols-outlined">delete</span>
+</button>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<label class="w-full flex flex-col items-center justify-center p-6 border-2 border-dashed border-outline-variant rounded-xl hover:bg-surface-variant/30 cursor-pointer transition-all">
+<span class="material-symbols-outlined text-primary text-[32px] mb-2">cloud_upload</span>
+<span class="font-label text-label text-on-surface">Klik untuk unggah foto</span>
+<span class="font-caption text-caption text-on-surface-variant">JPG, PNG atau WEBP (Maks. 5MB)</span>
+<input class="hidden" type="file">
+</label>
+</div>
+</section>
+<!-- Last Update Info -->
+<div class="p-4 bg-surface-container-low rounded-xl border border-outline-variant border-l-4 border-l-primary">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary mt-0.5">history</span>
+<div>
+<p class="font-label text-caption text-on-surface">Pembaruan Terakhir</p>
+<p class="text-caption font-caption text-on-surface-variant">12 Okt 2023, 14:30 oleh Admin Junaedi</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer Actions Fixed -->
+<footer class="fixed bottom-0 right-0 left-64 h-20 bg-surface border-t border-outline-variant px-8 flex items-center justify-between z-10">
+<p class="text-caption font-caption text-on-surface-variant">Pastikan semua data sudah benar sebelum menyimpan.</p>
+<div class="flex gap-4">
+<button class="px-6 py-2.5 rounded-lg border border-outline text-on-surface font-label text-label hover:bg-surface-container-low active:scale-95 transition-all">
+                    Batal
+                </button>
+<button class="px-8 py-2.5 rounded-lg bg-primary text-on-primary font-label text-label shadow-lg hover:bg-primary-hover active:scale-95 transition-all flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px]">save</span>
+                    Simpan Perubahan
+                </button>
+</div>
+</footer>
+</main>
+<script>
+        // Simple micro-interaction for status selection
+        const statusButtons = document.querySelectorAll('section:nth-of-type(3) button');
+        statusButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                statusButtons.forEach(b => {
+                    b.classList.remove('border-primary', 'bg-primary-fixed', 'text-on-primary-fixed', 'border-2');
+                    b.classList.add('border', 'border-outline-variant', 'bg-surface', 'text-on-surface');
+                    b.querySelector('.material-symbols-outlined:last-child').textContent = 'radio_button_unchecked';
+                });
+                btn.classList.add('border-primary', 'bg-primary-fixed', 'text-on-primary-fixed', 'border-2');
+                btn.classList.remove('border', 'border-outline-variant', 'bg-surface', 'text-on-surface');
+                btn.querySelector('.material-symbols-outlined:last-child').textContent = 'radio_button_checked';
+            });
+        });
+    </script>
+</body></html>

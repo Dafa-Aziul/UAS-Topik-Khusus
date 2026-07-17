@@ -1,0 +1,426 @@
+<!DOCTYPE html><html class="light" lang="id"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Roomify - Daftar Permohonan</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<!-- Tailwind Config Verbatim -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary-container": "#bc4800",
+                    "on-danger-container": "#7F1D1D",
+                    "surface-subtle": "#F1F5F9",
+                    "inverse-on-surface": "#f0f0fb",
+                    "secondary-container": "#d5e3fc",
+                    "inverse-surface": "#2e3039",
+                    "secondary-fixed-dim": "#b9c7df",
+                    "danger": "#B91C1C",
+                    "tertiary-fixed-dim": "#ffb596",
+                    "secondary-fixed": "#d5e3fc",
+                    "outline-variant": "#c3c6d7",
+                    "on-primary-fixed-variant": "#003ea8",
+                    "on-primary-fixed": "#00174b",
+                    "warning": "#B45309",
+                    "on-tertiary-container": "#ffede6",
+                    "surface-container": "#ededf9",
+                    "on-secondary": "#ffffff",
+                    "primary-fixed-dim": "#b4c5ff",
+                    "success": "#15803D",
+                    "surface-container-high": "#e7e7f3",
+                    "success-container": "#DCFCE7",
+                    "surface-container-highest": "#e1e2ed",
+                    "tertiary-fixed": "#ffdbcd",
+                    "primary-container": "#DBEAFE",
+                    "on-error-container": "#93000a",
+                    "border-strong": "#CBD5E1",
+                    "tertiary": "#943700",
+                    "surface-container-low": "#f3f3fe",
+                    "outline": "#737686",
+                    "on-success-container": "#14532D",
+                    "surface-bright": "#faf8ff",
+                    "on-tertiary": "#ffffff",
+                    "on-primary-container": "#eeefff",
+                    "on-error": "#ffffff",
+                    "surface-tint": "#0053db",
+                    "on-secondary-fixed-variant": "#3a485b",
+                    "danger-container": "#FEE2E2",
+                    "secondary": "#515f74",
+                    "primary": "#004ac6",
+                    "surface-dim": "#d9d9e5",
+                    "primary-hover": "#1D4ED8",
+                    "on-tertiary-fixed-variant": "#7d2d00",
+                    "on-tertiary-fixed": "#360f00",
+                    "inverse-primary": "#b4c5ff",
+                    "info-container": "#DBEAFE",
+                    "surface-variant": "#e1e2ed",
+                    "on-warning-container": "#78350F",
+                    "on-background": "#191b23",
+                    "neutral-container": "#F1F5F9",
+                    "surface-container-lowest": "#ffffff",
+                    "warning-container": "#FEF3C7",
+                    "text-muted": "#64748B",
+                    "surface": "#faf8ff",
+                    "background": "#faf8ff",
+                    "text-primary": "#0F172A",
+                    "on-secondary-fixed": "#0d1c2e",
+                    "on-surface-variant": "#434655",
+                    "error-container": "#ffdad6",
+                    "error": "#ba1a1a",
+                    "on-primary": "#ffffff",
+                    "on-surface": "#191b23",
+                    "primary-fixed": "#dbe1ff",
+                    "on-secondary-container": "#57657a"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin-mobile": "16px",
+                    "gutter": "16px",
+                    "12": "48px",
+                    "4": "16px",
+                    "2": "8px",
+                    "1": "4px",
+                    "6": "24px",
+                    "16": "64px",
+                    "5": "20px",
+                    "3": "12px",
+                    "10": "40px",
+                    "margin-desktop": "24px",
+                    "8": "32px"
+            },
+            "fontFamily": {
+                    "h2": ["Inter"],
+                    "h3": ["Inter"],
+                    "h1": ["Inter"],
+                    "display-mobile": ["Inter"],
+                    "label": ["Inter"],
+                    "display": ["Inter"],
+                    "body-sm": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "h1-mobile": ["Inter"],
+                    "caption": ["Inter"],
+                    "body-md": ["Inter"]
+            },
+            "fontSize": {
+                    "h2": ["1.5rem", {"lineHeight": "2rem", "letterSpacing": "-0.015em", "fontWeight": "700"}],
+                    "h3": ["1.25rem", {"lineHeight": "1.75rem", "fontWeight": "600"}],
+                    "h1": ["2rem", {"lineHeight": "2.5rem", "letterSpacing": "-0.025em", "fontWeight": "700"}],
+                    "display-mobile": ["28px", {"lineHeight": "34px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "label": ["0.875rem", {"lineHeight": "1.25rem", "fontWeight": "600"}],
+                    "display": ["2.25rem", {"lineHeight": "2.75rem", "letterSpacing": "-0.03em", "fontWeight": "700"}],
+                    "body-sm": ["0.8125rem", {"lineHeight": "1.25rem", "fontWeight": "400"}],
+                    "body-lg": ["1rem", {"lineHeight": "1.625rem", "fontWeight": "400"}],
+                    "h1-mobile": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "700"}],
+                    "caption": ["0.75rem", {"lineHeight": "1rem", "fontWeight": "500"}],
+                    "body-md": ["0.875rem", {"lineHeight": "1.375rem", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #CBD5E1; border-radius: 10px; }
+        .status-pill { padding: 4px 12px; border-radius: 9999px; font-weight: 600; font-size: 0.75rem; display: inline-flex; align-items: center; gap: 4px; }
+    </style>
+</head>
+<body class="bg-surface-subtle text-on-surface">
+<!-- Desktop SideNavBar (from JSON) -->
+<aside class="fixed left-0 top-0 h-screen w-64 bg-surface border-r border-outline-variant flex flex-col p-6 hidden md:flex z-50">
+<div class="mb-10">
+<h1 class="text-h2 font-h2 text-primary">Roomify</h1>
+<p class="font-label text-label text-text-muted">Campus Management</p>
+</div>
+<nav class="flex-1 space-y-2">
+<a class="flex items-center gap-3 px-4 py-3 text-secondary hover:bg-surface-container-low rounded-xl transition-colors duration-200" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-label text-label">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-primary font-bold border-r-4 border-primary bg-surface-container-low rounded-l-xl transition-colors duration-200" href="#">
+<span class="material-symbols-outlined">assignment</span>
+<span class="font-label text-label">Peminjaman Saya</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-secondary hover:bg-surface-container-low rounded-xl transition-colors duration-200" href="#">
+<span class="material-symbols-outlined">search</span>
+<span class="font-label text-label">Cari Ruangan</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-secondary hover:bg-surface-container-low rounded-xl transition-colors duration-200" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label text-label">Profil</span>
+</a>
+</nav>
+<div class="mt-auto pt-6 border-t border-outline-variant">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center text-primary font-bold">A</div>
+<div>
+<p class="font-label text-label text-on-surface">Admin University</p>
+<p class="text-caption text-text-muted">Admin Staff</p>
+</div>
+</div>
+</div>
+</aside>
+<!-- TopAppBar (from JSON) -->
+<header class="flex justify-between items-center h-16 px-6 ml-64 bg-surface border-b border-outline-variant fixed top-0 right-0 left-0 md:w-[calc(100%-256px)] z-40">
+<div class="flex items-center gap-4">
+<h2 class="text-h3 font-h3 text-primary">Roomify</h2>
+</div>
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-4 text-on-surface-variant">
+<button class="material-symbols-outlined hover:text-primary transition-opacity duration-150">notifications</button>
+<button class="material-symbols-outlined hover:text-primary transition-opacity duration-150">help</button>
+</div>
+<div class="w-8 h-8 rounded-full overflow-hidden border border-outline-variant">
+<img class="w-full h-full object-cover" data-alt="A clean, professional headshot of a campus administrator in a business-casual blue shirt, smiling warmly against a bright, out-of-focus academic office background. High-quality corporate photography, natural lighting, modern academic aesthetic, soft color palette." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAa5KXfQQ0OIyrVOV2Goml7L6vXMnuXllDVDFwv1gl8lFM9O5nqbxH2cEnztpdnqJULJWzhYCQZowhn4gymZtestXYxu2POvMwM3CoYHCjNVTJe83kuB3Al0D5yEo4k-wwj-qLxrPEMWdfZJtpzMnK2rohiJemq5NUFr72Gt2jp8sLAmN2y9OI5xOIESnSztfiWI9HMCpEflT2x04Ri09gEjs6ob6zirIEthvzKH5LtYJ4-cJh4JCCbPQ">
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="ml-0 md:ml-64 pt-16 min-h-screen pb-24 md:pb-8">
+<div class="max-w-7xl mx-auto px-6 py-8">
+<!-- Page Header -->
+<div class="mb-8">
+<h2 class="font-h1 text-h1 text-on-surface">Daftar Permohonan</h2>
+<p class="font-body-lg text-body-lg text-text-muted">Kelola dan tinjau semua permohonan peminjaman ruangan di kampus.</p>
+</div>
+<!-- Bento Filter Section -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-6 mb-8">
+<!-- Status Tabs (Desktop) -->
+<div class="lg:col-span-8 bg-surface p-2 rounded-2xl border border-outline-variant flex items-center overflow-x-auto gap-1">
+<button class="px-6 py-2 rounded-xl font-label text-label bg-primary text-on-primary transition-all duration-200">Semua</button>
+<button class="px-6 py-2 rounded-xl font-label text-label text-secondary hover:bg-surface-container-low transition-all duration-200">Menunggu</button>
+<button class="px-6 py-2 rounded-xl font-label text-label text-secondary hover:bg-surface-container-low transition-all duration-200">Disetujui</button>
+<button class="px-6 py-2 rounded-xl font-label text-label text-secondary hover:bg-surface-container-low transition-all duration-200">Ditolak</button>
+<button class="px-6 py-2 rounded-xl font-label text-label text-secondary hover:bg-surface-container-low transition-all duration-200">Selesai</button>
+</div>
+<!-- Date Filter -->
+<div class="lg:col-span-4 bg-surface p-2 rounded-2xl border border-outline-variant flex items-center px-4 gap-3">
+<span class="material-symbols-outlined text-secondary">calendar_today</span>
+<input class="w-full bg-transparent border-none focus:ring-0 font-label text-label text-on-surface" placeholder="Jan 1, 2024 - Jan 30, 2024" type="text">
+</div>
+</div>
+<!-- Search & Actions -->
+<div class="flex flex-col md:flex-row justify-between items-center gap-4 mb-6">
+<div class="relative w-full md:w-96">
+<span class="absolute inset-y-0 left-0 pl-3 flex items-center text-outline">
+<span class="material-symbols-outlined">search</span>
+</span>
+<input class="block w-full pl-10 pr-4 py-2.5 bg-surface border border-outline-variant rounded-xl focus:border-primary focus:ring-2 focus:ring-primary-container font-body-md text-body-md outline-none transition-all" placeholder="Cari ID Booking atau Mahasiswa..." type="text">
+</div>
+<div class="flex gap-3 w-full md:w-auto">
+<button class="flex-1 md:flex-none flex items-center justify-center gap-2 px-4 py-2.5 bg-surface border border-outline-variant text-secondary font-label text-label rounded-xl hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined text-[20px]">filter_list</span>
+                        Filter
+                    </button>
+<button class="flex-1 md:flex-none flex items-center justify-center gap-2 px-4 py-2.5 bg-primary text-on-primary font-label text-label rounded-xl hover:bg-primary-hover transition-colors shadow-sm">
+<span class="material-symbols-outlined text-[20px]">download</span>
+                        Export Data
+                    </button>
+</div>
+</div>
+<!-- Data Table Container -->
+<div class="bg-surface rounded-2xl border border-outline-variant overflow-hidden shadow-sm">
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low border-b border-outline-variant">
+<th class="px-6 py-4 font-label text-label text-secondary uppercase tracking-wider">ID Booking</th>
+<th class="px-6 py-4 font-label text-label text-secondary uppercase tracking-wider">Mahasiswa</th>
+<th class="px-6 py-4 font-label text-label text-secondary uppercase tracking-wider">Ruangan</th>
+<th class="px-6 py-4 font-label text-label text-secondary uppercase tracking-wider">Tanggal &amp; Waktu</th>
+<th class="px-6 py-4 font-label text-label text-secondary uppercase tracking-wider">Tujuan</th>
+<th class="px-6 py-4 font-label text-label text-secondary uppercase tracking-wider">Status</th>
+<th class="px-6 py-4 font-label text-label text-secondary uppercase tracking-wider text-center">Aksi</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant font-body-md text-body-md">
+<!-- Row 1: Pending -->
+<tr class="hover:bg-surface-bright transition-colors group">
+<td class="px-6 py-5 text-primary font-bold">#BK-8821</td>
+<td class="px-6 py-5">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container text-xs font-bold">BN</div>
+<div>
+<p class="font-label text-on-surface">Budi Nugraha</p>
+<p class="text-caption text-text-muted">10221045</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-5">Lab Komputer 03</td>
+<td class="px-6 py-5">
+<p>24 Okt 2023</p>
+<p class="text-caption text-text-muted">09:00 - 12:00</p>
+</td>
+<td class="px-6 py-5 truncate max-w-[200px]">Rapat Organisasi Mahasiswa Teknik Informatika</td>
+<td class="px-6 py-5">
+<span class="status-pill bg-warning-container text-on-warning-container">
+<span class="material-symbols-outlined text-[14px]">schedule</span>
+                                        Menunggu Persetujuan
+                                    </span>
+</td>
+<td class="px-6 py-5 text-center">
+<button class="px-4 py-1.5 border border-primary text-primary font-label text-label rounded-lg hover:bg-primary-container transition-all">Periksa</button>
+</td>
+</tr>
+<!-- Row 2: Approved -->
+<tr class="hover:bg-surface-bright transition-colors">
+<td class="px-6 py-5 text-primary font-bold">#BK-8819</td>
+<td class="px-6 py-5">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container text-xs font-bold">SR</div>
+<div>
+<p class="font-label text-on-surface">Siti Rahma</p>
+<p class="text-caption text-text-muted">10319022</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-5">Ruang Seminar A</td>
+<td class="px-6 py-5">
+<p>25 Okt 2023</p>
+<p class="text-caption text-text-muted">13:00 - 15:00</p>
+</td>
+<td class="px-6 py-5">Sidang Skripsi Akhir Semester</td>
+<td class="px-6 py-5">
+<span class="status-pill bg-success-container text-on-success-container">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+                                        Disetujui
+                                    </span>
+</td>
+<td class="px-6 py-5 text-center">
+<button class="px-4 py-1.5 border border-primary text-primary font-label text-label rounded-lg hover:bg-primary-container transition-all">Periksa</button>
+</td>
+</tr>
+<!-- Row 3: Rejected -->
+<tr class="hover:bg-surface-bright transition-colors">
+<td class="px-6 py-5 text-primary font-bold">#BK-8795</td>
+<td class="px-6 py-5">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container text-xs font-bold">AP</div>
+<div>
+<p class="font-label text-on-surface">Adit Pratama</p>
+<p class="text-caption text-text-muted">10221088</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-5">Auditorium Pusat</td>
+<td class="px-6 py-5">
+<p>26 Okt 2023</p>
+<p class="text-caption text-text-muted">08:00 - 17:00</p>
+</td>
+<td class="px-6 py-5">Latihan Teater Malam Kesenian</td>
+<td class="px-6 py-5">
+<span class="status-pill bg-danger-container text-on-danger-container">
+<span class="material-symbols-outlined text-[14px]">cancel</span>
+                                        Ditolak
+                                    </span>
+</td>
+<td class="px-6 py-5 text-center">
+<button class="px-4 py-1.5 border border-primary text-primary font-label text-label rounded-lg hover:bg-primary-container transition-all">Periksa</button>
+</td>
+</tr>
+<!-- Row 4: Completed -->
+<tr class="hover:bg-surface-bright transition-colors">
+<td class="px-6 py-5 text-primary font-bold">#BK-8750</td>
+<td class="px-6 py-5">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container text-xs font-bold">LH</div>
+<div>
+<p class="font-label text-on-surface">Linda Hati</p>
+<p class="text-caption text-text-muted">10418001</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-5">Ruang Kelas B102</td>
+<td class="px-6 py-5">
+<p>21 Okt 2023</p>
+<p class="text-caption text-text-muted">10:00 - 12:00</p>
+</td>
+<td class="px-6 py-5">Bimbingan Akademik Dosen</td>
+<td class="px-6 py-5">
+<span class="status-pill bg-info-container text-primary">
+<span class="material-symbols-outlined text-[14px]">verified</span>
+                                        Selesai
+                                    </span>
+</td>
+<td class="px-6 py-5 text-center">
+<button class="px-4 py-1.5 border border-primary text-primary font-label text-label rounded-lg hover:bg-primary-container transition-all">Periksa</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Footer / Pagination -->
+<div class="bg-surface-container-lowest px-6 py-4 border-t border-outline-variant flex justify-between items-center">
+<p class="font-body-sm text-body-sm text-text-muted">Menampilkan 1-10 dari 48 permohonan</p>
+<div class="flex gap-2">
+<button class="w-8 h-8 flex items-center justify-center rounded-lg border border-outline-variant text-secondary disabled:opacity-50" disabled="">
+<span class="material-symbols-outlined text-[18px]">chevron_left</span>
+</button>
+<button class="w-8 h-8 flex items-center justify-center rounded-lg bg-primary text-on-primary font-label text-label">1</button>
+<button class="w-8 h-8 flex items-center justify-center rounded-lg border border-outline-variant text-secondary hover:bg-surface-container-low">2</button>
+<button class="w-8 h-8 flex items-center justify-center rounded-lg border border-outline-variant text-secondary hover:bg-surface-container-low">3</button>
+<button class="w-8 h-8 flex items-center justify-center rounded-lg border border-outline-variant text-secondary">
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-2 bg-surface border-t border-outline-variant md:hidden shadow-lg">
+<div class="flex flex-col items-center justify-center text-on-surface-variant active:bg-surface-container-high transition-transform duration-100 scale-95">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-caption text-caption">Dashboard</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant active:bg-surface-container-high transition-transform duration-100 scale-95">
+<span class="material-symbols-outlined">meeting_room</span>
+<span class="font-caption text-caption">Ruangan</span>
+</div>
+<div class="flex flex-col items-center justify-center bg-secondary-container text-primary rounded-xl px-3 py-1 transition-transform duration-100 scale-95">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">assignment</span>
+<span class="font-caption text-caption">Peminjaman</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant active:bg-surface-container-high transition-transform duration-100 scale-95">
+<span class="material-symbols-outlined">person</span>
+<span class="font-caption text-caption">Profil</span>
+</div>
+</nav>
+<script>
+        // Simple Micro-interaction for rows
+        document.querySelectorAll('tbody tr').forEach(row => {
+            row.addEventListener('click', () => {
+                const id = row.querySelector('td:first-child').innerText;
+                console.log(`Checking booking: ${id}`);
+                // In a real app, this would route to a details page
+            });
+        });
+
+        // Tab switching logic (visual only for this demo)
+        const tabs = document.querySelectorAll('.lg\\:col-span-8 button');
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                tabs.forEach(t => {
+                    t.classList.remove('bg-primary', 'text-on-primary');
+                    t.classList.add('text-secondary', 'hover:bg-surface-container-low');
+                });
+                tab.classList.remove('text-secondary', 'hover:bg-surface-container-low');
+                tab.classList.add('bg-primary', 'text-on-primary');
+            });
+        });
+    </script>
+</body></html>

@@ -1,0 +1,318 @@
+<!DOCTYPE html><html class="light" lang="id"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Daftar Akun Mahasiswa - Roomify</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "error": "#ba1a1a",
+                    "surface-bright": "#faf8ff",
+                    "error-container": "#ffdad6",
+                    "primary-hover": "#1D4ED8",
+                    "surface-container": "#ededf9",
+                    "inverse-on-surface": "#f0f0fb",
+                    "surface-dim": "#d9d9e5",
+                    "inverse-surface": "#2e3039",
+                    "on-tertiary-container": "#ffede6",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-container-highest": "#e1e2ed",
+                    "on-secondary-fixed-variant": "#3a485b",
+                    "primary-fixed-dim": "#b4c5ff",
+                    "inverse-primary": "#b4c5ff",
+                    "surface-container-low": "#f3f3fe",
+                    "tertiary-fixed": "#ffdbcd",
+                    "surface-subtle": "#F1F5F9",
+                    "outline": "#737686",
+                    "surface-tint": "#0053db",
+                    "secondary-fixed": "#d5e3fc",
+                    "on-danger-container": "#7F1D1D",
+                    "text-muted": "#64748B",
+                    "tertiary-container": "#bc4800",
+                    "info-container": "#DBEAFE",
+                    "on-surface-variant": "#434655",
+                    "primary-container": "#2563eb",
+                    "on-primary-container": "#1E3A8A",
+                    "surface-variant": "#e1e2ed",
+                    "danger": "#B91C1C",
+                    "on-surface": "#191b23",
+                    "on-background": "#191b23",
+                    "success-container": "#DCFCE7",
+                    "on-success-container": "#14532D",
+                    "on-secondary-fixed": "#0d1c2e",
+                    "on-primary-fixed": "#00174b",
+                    "success": "#15803D",
+                    "primary-fixed": "#dbe1ff",
+                    "on-secondary-container": "#57657a",
+                    "text-primary": "#0F172A",
+                    "tertiary-fixed-dim": "#ffb596",
+                    "secondary-fixed-dim": "#b9c7df",
+                    "background": "#faf8ff",
+                    "on-tertiary": "#ffffff",
+                    "on-error": "#ffffff",
+                    "warning-container": "#FEF3C7",
+                    "on-error-container": "#93000a",
+                    "on-secondary": "#ffffff",
+                    "surface-container-high": "#e7e7f3",
+                    "on-warning-container": "#78350F",
+                    "warning": "#B45309",
+                    "on-tertiary-fixed-variant": "#7d2d00",
+                    "surface": "#faf8ff",
+                    "secondary": "#515f74",
+                    "secondary-container": "#d5e3fc",
+                    "outline-variant": "#c3c6d7",
+                    "primary": "#004ac6",
+                    "danger-container": "#FEE2E2",
+                    "on-tertiary-fixed": "#360f00",
+                    "neutral-container": "#F1F5F9",
+                    "tertiary": "#943700",
+                    "on-primary-fixed-variant": "#003ea8",
+                    "on-primary": "#ffffff",
+                    "border-strong": "#CBD5E1"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin-mobile": "16px",
+                    "4": "16px",
+                    "gutter": "16px",
+                    "3": "12px",
+                    "2": "8px",
+                    "8": "32px",
+                    "6": "24px",
+                    "margin-desktop": "24px",
+                    "10": "40px",
+                    "1": "4px",
+                    "5": "20px",
+                    "16": "64px",
+                    "12": "48px"
+            },
+            "fontFamily": {
+                    "display": ["Inter"],
+                    "label": ["Inter"],
+                    "body-md": ["Inter"],
+                    "h1": ["Inter"],
+                    "h2": ["Inter"],
+                    "h3": ["Inter"],
+                    "display-mobile": ["Inter"],
+                    "body-sm": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "h1-mobile": ["Inter"],
+                    "caption": ["Inter"]
+            },
+            "fontSize": {
+                    "display": ["2.25rem", {"lineHeight": "2.75rem", "letterSpacing": "-0.03em", "fontWeight": "700"}],
+                    "label": ["0.875rem", {"lineHeight": "1.25rem", "fontWeight": "600"}],
+                    "body-md": ["0.875rem", {"lineHeight": "1.375rem", "fontWeight": "400"}],
+                    "h1": ["2rem", {"lineHeight": "2.5rem", "letterSpacing": "-0.025em", "fontWeight": "700"}],
+                    "h2": ["1.5rem", {"lineHeight": "2rem", "letterSpacing": "-0.015em", "fontWeight": "700"}],
+                    "h3": ["1.25rem", {"lineHeight": "1.75rem", "fontWeight": "600"}],
+                    "display-mobile": ["28px", {"lineHeight": "34px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-sm": ["0.8125rem", {"lineHeight": "1.25rem", "fontWeight": "400"}],
+                    "body-lg": ["1rem", {"lineHeight": "1.625rem", "fontWeight": "400"}],
+                    "h1-mobile": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "700"}],
+                    "caption": ["0.75rem", {"lineHeight": "1rem", "fontWeight": "500"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+      body {
+        font-family: 'Inter', sans-serif;
+        background-color: #faf8ff;
+      }
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .glass-effect {
+        backdrop-filter: blur(12px);
+        background: rgba(255, 255, 255, 0.8);
+      }
+      .gradient-bg {
+        background: radial-gradient(circle at top right, #dbe1ff 0%, transparent 40%),
+                    radial-gradient(circle at bottom left, #d5e3fc 0%, transparent 40%);
+      }
+    </style>
+</head>
+<body class="min-h-screen gradient-bg flex items-center justify-center p-4 md:p-8">
+<!-- Auth Shell Suppression (No TopAppBar/SideNav for Transactional Screen) -->
+<main class="w-full max-w-[1000px] grid md:grid-cols-2 bg-surface-container-lowest rounded-xl shadow-lg overflow-hidden border border-outline-variant">
+<!-- Left Side: Visual Branding & Context -->
+<section class="hidden md:flex flex-col justify-between p-12 bg-primary text-on-primary relative overflow-hidden">
+<div class="relative z-10">
+<div class="flex items-center gap-3 mb-10">
+<span class="material-symbols-outlined text-[40px]" style="font-variation-settings: 'FILL' 1;">meeting_room</span>
+<h1 class="font-h2 text-h2 tracking-tight">Roomify</h1>
+</div>
+<h2 class="font-display text-display mb-6">Kelola Ruang Belajarmu Lebih Cepat.</h2>
+<p class="font-body-lg text-body-lg opacity-90 leading-relaxed">
+                    Akses eksklusif untuk mahasiswa Universitas. Daftarkan diri Anda menggunakan NIM untuk mulai meminjam ruang kelas, lab, dan fasilitas kampus lainnya secara online.
+                </p>
+</div>
+<div class="relative z-10 mt-auto">
+<div class="flex items-center gap-4 bg-primary-container/20 p-4 rounded-lg border border-white/10 backdrop-blur-sm">
+<span class="material-symbols-outlined text-primary-fixed">info</span>
+<p class="font-body-sm text-body-sm">
+                        Akun ini khusus untuk profil Mahasiswa Aktif. Gunakan Email Institusi jika tersedia.
+                    </p>
+</div>
+</div>
+<!-- Abstract Decorative Element -->
+<div class="absolute -bottom-20 -right-20 w-80 h-80 bg-on-primary/10 rounded-full blur-3xl"></div>
+<div class="absolute top-20 -left-20 w-64 h-64 bg-on-primary/5 rounded-full blur-2xl"></div>
+</section>
+<!-- Right Side: Registration Form -->
+<section class="p-8 md:p-12 flex flex-col justify-center">
+<div class="mb-8">
+<h2 class="font-h2 text-h2 text-text-primary mb-2">Daftar Akun Baru</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Lengkapi data diri Anda di bawah ini.</p>
+</div>
+<form class="space-y-5" id="registrationForm">
+<!-- Nama Lengkap -->
+<div class="space-y-1.5">
+<label class="block font-label text-label text-on-surface" for="fullName">Nama Lengkap</label>
+<div class="relative">
+<span class="absolute inset-y-0 left-0 pl-3 flex items-center text-on-surface-variant">
+<span class="material-symbols-outlined text-[20px]">person</span>
+</span>
+<input class="w-full pl-10 pr-4 py-3 rounded-lg border border-outline-variant focus:ring-2 focus:ring-primary focus:border-primary font-body-md text-body-md transition-all outline-none" id="fullName" name="fullName" placeholder="Nama sesuai KHS" required="" type="text">
+</div>
+</div>
+<!-- NIM -->
+<div class="space-y-1.5">
+<label class="block font-label text-label text-on-surface" for="nim">NIM (Nomor Induk Mahasiswa)</label>
+<div class="relative">
+<span class="absolute inset-y-0 left-0 pl-3 flex items-center text-on-surface-variant">
+<span class="material-symbols-outlined text-[20px]">badge</span>
+</span>
+<input class="w-full pl-10 pr-4 py-3 rounded-lg border border-outline-variant bg-surface-container-low focus:ring-2 focus:ring-primary focus:border-primary font-body-md text-body-md transition-all outline-none" id="nim" inputmode="numeric" name="nim" pattern="[0-9]*" placeholder="Contoh: 2101012345" required="" type="text">
+</div>
+<span class="text-[11px] text-on-surface-variant font-caption">Hanya angka. Digunakan untuk validasi status kemahasiswaan.</span>
+</div>
+<!-- Email -->
+<div class="space-y-1.5">
+<label class="block font-label text-label text-on-surface" for="email">Email</label>
+<div class="relative">
+<span class="absolute inset-y-0 left-0 pl-3 flex items-center text-on-surface-variant">
+<span class="material-symbols-outlined text-[20px]">mail</span>
+</span>
+<input class="w-full pl-10 pr-4 py-3 rounded-lg border border-outline-variant focus:ring-2 focus:ring-primary focus:border-primary font-body-md text-body-md transition-all outline-none" id="email" name="email" placeholder="nama@student.univ.ac.id" required="" type="email">
+</div>
+</div>
+<!-- Password Row -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="space-y-1.5">
+<label class="block font-label text-label text-on-surface" for="password">Password</label>
+<div class="relative">
+<span class="absolute inset-y-0 left-0 pl-3 flex items-center text-on-surface-variant">
+<span class="material-symbols-outlined text-[20px]">lock</span>
+</span>
+<input class="w-full pl-10 pr-4 py-3 rounded-lg border border-outline-variant focus:ring-2 focus:ring-primary focus:border-primary font-body-md text-body-md transition-all outline-none" id="password" name="password" placeholder="Min. 8 karakter" required="" type="password">
+</div>
+</div>
+<div class="space-y-1.5">
+<label class="block font-label text-label text-on-surface" for="confirmPassword">Konfirmasi</label>
+<div class="relative">
+<span class="absolute inset-y-0 left-0 pl-3 flex items-center text-on-surface-variant">
+<span class="material-symbols-outlined text-[20px]">shield_lock</span>
+</span>
+<input class="w-full pl-10 pr-4 py-3 rounded-lg border border-outline-variant focus:ring-2 focus:ring-primary focus:border-primary font-body-md text-body-md transition-all outline-none" id="confirmPassword" name="confirmPassword" placeholder="Ulangi password" required="" type="password">
+</div>
+</div>
+</div>
+<!-- Inline Validation / Requirements -->
+<div class="bg-surface-subtle p-3 rounded-lg space-y-2">
+<div class="flex items-center gap-2 text-on-surface-variant" id="req-length">
+<span class="material-symbols-outlined text-[16px]">check_circle</span>
+<span class="font-caption text-caption">Minimal 8 karakter</span>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant" id="req-match">
+<span class="material-symbols-outlined text-[16px]">check_circle</span>
+<span class="font-caption text-caption">Password cocok</span>
+</div>
+</div>
+<button class="w-full h-[44px] bg-primary text-on-primary font-label rounded-lg hover:bg-primary-hover transition-colors shadow-sm mt-4 flex items-center justify-center gap-2" type="submit">
+                    Daftar Sekarang
+                    <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</form>
+<div class="mt-8 pt-6 border-t border-outline-variant text-center">
+<p class="font-body-md text-body-md text-on-surface-variant">
+                    Sudah punya akun mahasiswa? 
+                    <a class="text-primary font-label hover:underline decoration-2 underline-offset-4" href="#">Masuk ke Roomify</a>
+</p>
+</div>
+</section>
+</main>
+<!-- Micro-interaction Script -->
+<script>
+        const passwordInput = document.getElementById('password');
+        const confirmInput = document.getElementById('confirmPassword');
+        const reqLength = document.getElementById('req-length');
+        const reqMatch = document.getElementById('req-match');
+        const nimInput = document.getElementById('nim');
+
+        // NIM only numeric enforcement
+        nimInput.addEventListener('input', (e) => {
+            e.target.value = e.target.value.replace(/[^0-9]/g, '');
+        });
+
+        // Simple validation feedback
+        const updateValidation = () => {
+            const passValue = passwordInput.value;
+            const confirmValue = confirmInput.value;
+
+            // Length check
+            if (passValue.length >= 8) {
+                reqLength.classList.remove('text-on-surface-variant');
+                reqLength.classList.add('text-success');
+                reqLength.querySelector('.material-symbols-outlined').style.fontVariationSettings = "'FILL' 1";
+            } else {
+                reqLength.classList.add('text-on-surface-variant');
+                reqLength.classList.remove('text-success');
+                reqLength.querySelector('.material-symbols-outlined').style.fontVariationSettings = "'FILL' 0";
+            }
+
+            // Match check
+            if (passValue === confirmValue && passValue !== '') {
+                reqMatch.classList.remove('text-on-surface-variant');
+                reqMatch.classList.add('text-success');
+                reqMatch.querySelector('.material-symbols-outlined').style.fontVariationSettings = "'FILL' 1";
+            } else {
+                reqMatch.classList.add('text-on-surface-variant');
+                reqMatch.classList.remove('text-success');
+                reqMatch.querySelector('.material-symbols-outlined').style.fontVariationSettings = "'FILL' 0";
+            }
+        };
+
+        passwordInput.addEventListener('input', updateValidation);
+        confirmInput.addEventListener('input', updateValidation);
+
+        // Form submission simulation
+        document.getElementById('registrationForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const btn = e.target.querySelector('button');
+            const originalContent = btn.innerHTML;
+            
+            btn.disabled = true;
+            btn.innerHTML = '<span class="material-symbols-outlined animate-spin">progress_activity</span> Memproses...';
+            
+            setTimeout(() => {
+                alert('Pendaftaran Berhasil! Silakan cek email Anda untuk verifikasi.');
+                btn.disabled = false;
+                btn.innerHTML = originalContent;
+            }, 1500);
+        });
+    </script>
+</body></html>

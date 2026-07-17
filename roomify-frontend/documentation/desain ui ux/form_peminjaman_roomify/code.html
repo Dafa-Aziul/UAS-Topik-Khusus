@@ -1,0 +1,368 @@
+<!DOCTYPE html><html class="light" lang="id"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Booking Lab Komputer 1 (L-101) - Roomify</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-container": "#bc4800",
+                        "secondary-container": "#d5e3fc",
+                        "on-secondary": "#ffffff",
+                        "tertiary-fixed-dim": "#ffb596",
+                        "tertiary-fixed": "#ffdbcd",
+                        "surface": "#faf8ff",
+                        "on-error": "#ffffff",
+                        "surface-container-highest": "#e1e2ed",
+                        "on-success-container": "#14532D",
+                        "surface-container": "#ededf9",
+                        "secondary-fixed": "#d5e3fc",
+                        "on-surface-variant": "#434655",
+                        "inverse-primary": "#b4c5ff",
+                        "inverse-on-surface": "#f0f0fb",
+                        "on-primary-fixed-variant": "#003ea8",
+                        "secondary": "#515f74",
+                        "surface-bright": "#faf8ff",
+                        "outline-variant": "#c3c6d7",
+                        "primary-hover": "#1D4ED8",
+                        "surface-container-high": "#e7e7f3",
+                        "on-secondary-container": "#57657a",
+                        "error": "#ba1a1a",
+                        "success-container": "#DCFCE7",
+                        "warning": "#B45309",
+                        "on-tertiary-fixed": "#360f00",
+                        "on-tertiary-fixed-variant": "#7d2d00",
+                        "secondary-fixed-dim": "#b9c7df",
+                        "surface-subtle": "#F1F5F9",
+                        "warning-container": "#FEF3C7",
+                        "surface-dim": "#d9d9e5",
+                        "surface-tint": "#0053db",
+                        "outline": "#737686",
+                        "danger": "#B91C1C",
+                        "on-warning-container": "#78350F",
+                        "success": "#15803D",
+                        "on-primary-container": "#eeefff",
+                        "border-strong": "#CBD5E1",
+                        "on-background": "#191b23",
+                        "inverse-surface": "#2e3039",
+                        "primary-container": "#2563eb",
+                        "background": "#faf8ff",
+                        "primary": "#004ac6",
+                        "neutral-container": "#F1F5F9",
+                        "text-muted": "#64748B",
+                        "on-error-container": "#93000a",
+                        "error-container": "#ffdad6",
+                        "on-danger-container": "#7F1D1D",
+                        "on-tertiary": "#ffffff",
+                        "on-surface": "#191b23",
+                        "danger-container": "#FEE2E2",
+                        "on-primary": "#ffffff",
+                        "tertiary": "#943700",
+                        "primary-fixed": "#dbe1ff",
+                        "surface-container-lowest": "#ffffff",
+                        "info-container": "#DBEAFE",
+                        "primary-fixed-dim": "#b4c5ff",
+                        "on-primary-fixed": "#00174b",
+                        "on-secondary-fixed": "#0d1c2e",
+                        "surface-variant": "#e1e2ed",
+                        "on-tertiary-container": "#ffede6",
+                        "on-secondary-fixed-variant": "#3a485b",
+                        "text-primary": "#0F172A",
+                        "surface-container-low": "#f3f3fe"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "caption": ["Inter"],
+                        "label": ["Inter"],
+                        "h3": ["Inter"],
+                        "h1": ["Inter"],
+                        "h2": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "h1-mobile": ["Inter"],
+                        "display": ["Inter"],
+                        "body-md": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "display-mobile": ["Inter"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-background text-on-surface">
+<!-- Desktop SideNav -->
+<aside class="fixed left-0 top-0 h-screen w-64 bg-surface border-r border-outline-variant flex flex-col p-6 hidden md:flex z-40">
+<div class="mb-10">
+<h2 class="text-h2 font-h2 text-primary">Roomify</h2>
+<p class="font-label text-label text-secondary">Campus Management</p>
+</div>
+<nav class="space-y-2 flex-grow">
+<a class="flex items-center gap-3 px-4 py-3 text-secondary hover:bg-surface-container-low transition-colors duration-200 rounded-xl" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-label text-label">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-primary font-bold border-r-4 border-primary bg-surface-container-low rounded-r-none rounded-l-xl" href="#">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+<span class="font-label text-label">Cari Ruangan</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-secondary hover:bg-surface-container-low transition-colors duration-200 rounded-xl" href="#">
+<span class="material-symbols-outlined" data-icon="history">history</span>
+<span class="font-label text-label">Peminjaman Saya</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-secondary hover:bg-surface-container-low transition-colors duration-200 rounded-xl" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-label text-label">Profil</span>
+</a>
+</nav>
+<div class="pt-6 border-t border-outline-variant">
+<div class="flex items-center gap-3">
+<img class="w-10 h-10 rounded-full object-cover" data-alt="A professional headshot of a university student with a friendly expression, set against a blurred academic building background. The lighting is soft and natural, emphasizing a clean and corporate look that matches the Roomify application's professional blue and white color scheme." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBa3SJG7Gk5q9NBszwvFWfvqjpysQkZ211IpbxhAoSb5cKQxhDfuNivQjIGiouebxm9rjeLTH_IjNlc2kEUypuQySkoIjfv-I6_r1WI6Ncn3yXzd7As2MFw9p8R2ZZ8rMvrhjoKM435T0HtZhmFRG1K7HzygdI0wvMmkPX4DlQh15qM0uEIfDa0iU474gORPyLWpmK7_mlRPmBIAnKalB3ZpJ9JpP9zWOIYLS6y6Sft0Spg6KRhka508A">
+<div>
+<p class="font-label text-label text-on-surface">Budi Santoso</p>
+<p class="text-[10px] text-on-surface-variant uppercase tracking-wider">Informatika</p>
+</div>
+</div>
+</div>
+</aside>
+<!-- Top AppBar -->
+<header class="flex justify-between items-center h-16 px-6 bg-surface border-b border-outline-variant fixed top-0 left-0 right-0 md:ml-64 z-30">
+<div class="flex items-center gap-4">
+<button class="md:hidden text-on-surface">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+<h1 class="text-h3 font-h3 text-primary">Form Peminjaman</h1>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-primary transition-opacity duration-150" data-icon="notifications">notifications</span>
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-primary transition-opacity duration-150" data-icon="help">help</span>
+</div>
+</header>
+<!-- Main Content Area -->
+<main class="pt-20 pb-24 md:pb-8 px-4 md:pl-72 md:pr-8 min-h-screen">
+<div class="max-w-6xl mx-auto flex flex-col lg:flex-row gap-8 items-start">
+<!-- Form Section -->
+<div class="flex-grow w-full space-y-6">
+<!-- Breadcrumb -->
+<nav class="flex items-center gap-2 text-on-surface-variant font-body-sm text-body-sm">
+<a class="hover:text-primary" href="#">Cari Ruangan</a>
+<span class="material-symbols-outlined text-sm" data-icon="chevron_right">chevron_right</span>
+<span class="text-on-surface font-medium">Lab Komputer 1</span>
+</nav>
+<!-- Room Header Card -->
+<div class="bg-surface-container-lowest border border-outline-variant p-4 rounded-xl flex flex-col sm:flex-row gap-4 items-center">
+<img class="w-full sm:w-24 h-24 rounded-lg object-cover" data-alt="A modern university computer laboratory with rows of sleek desktop computers, ergonomic chairs, and high ceilings. The room is brightly lit with integrated LED panels, creating a clean, professional, and high-tech atmosphere. The walls are a soft neutral grey with subtle blue accents to match the corporate branding of the Roomify platform." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDpiQydK3BlzPMnTnWvee8R6s0abXAI4rTMoGCoBqxdxEQ49oROmV-HNZjLDNcd2ATXdOg5Xjn60nrqffj9lj_4eFh12-ASCTfrZlV6YGVn9eNv1UMoH_V2fqKZSu3801_uTfPcliTYW8fpdFWaP2PzyAJLE6ZMx3Y27EaLU3VyKh7_gI9ocSXMJ3diGxP7dQfMCrUdFP0j5A4EOLy_kNT7TeUytYGLXGdXnjasIQ_wIO79sJlDohovFQ">
+<div class="flex-grow text-center sm:text-left">
+<p class="text-on-surface-variant font-label text-label">Ruangan yang dipinjam</p>
+<h2 class="text-h2 font-h2 text-primary">Lab Komputer 1 (L-101)</h2>
+<div class="flex flex-wrap justify-center sm:justify-start gap-4 mt-2">
+<span class="flex items-center gap-1 text-on-surface-variant font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-sm" data-icon="groups">groups</span> Kapasitas 40
+                            </span>
+<span class="flex items-center gap-1 text-on-surface-variant font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-sm" data-icon="floor">floor</span> Lantai 1, Gedung Utama
+                            </span>
+</div>
+</div>
+</div>
+<!-- Booking Form -->
+<section class="bg-surface-container-lowest border border-outline-variant p-6 rounded-2xl shadow-sm">
+<h3 class="text-h3 font-h3 mb-6 text-on-surface">Informasi Peminjaman</h3>
+<form class="space-y-6">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Tanggal -->
+<div class="space-y-2">
+<label class="block font-label text-label text-on-surface" for="tanggal">Tanggal Kegiatan</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant" data-icon="calendar_today">calendar_today</span>
+<input class="w-full pl-10 pr-4 py-2.5 bg-white border border-outline-variant rounded-xl focus:ring-2 focus:ring-primary focus:border-primary transition-all outline-none font-body-md text-body-md" id="tanggal" name="tanggal" required="" type="date">
+</div>
+<p class="text-on-surface-variant text-[12px]">Pilih tanggal pelaksanaan kegiatan Anda.</p>
+</div>
+<!-- Jumlah Peserta -->
+<div class="space-y-2">
+<label class="block font-label text-label text-on-surface" for="peserta">Jumlah Peserta</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant" data-icon="person_add">person_add</span>
+<input class="w-full pl-10 pr-4 py-2.5 bg-white border border-outline-variant rounded-xl focus:ring-2 focus:ring-primary focus:border-primary transition-all outline-none font-body-md text-body-md" id="peserta" max="40" name="peserta" placeholder="Maks. 40" required="" type="number">
+</div>
+<p class="text-on-surface-variant text-[12px]">Kapasitas maksimal Lab adalah 40 orang.</p>
+</div>
+<!-- Waktu Mulai -->
+<div class="space-y-2">
+<label class="block font-label text-label text-on-surface" for="waktu_mulai">Waktu Mulai</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant" data-icon="schedule">schedule</span>
+<input class="w-full pl-10 pr-4 py-2.5 bg-white border border-outline-variant rounded-xl focus:ring-2 focus:ring-primary focus:border-primary transition-all outline-none font-body-md text-body-md" id="waktu_mulai" name="waktu_mulai" required="" type="time">
+</div>
+</div>
+<!-- Waktu Selesai -->
+<div class="space-y-2">
+<label class="block font-label text-label text-on-surface" for="waktu_selesai">Waktu Selesai</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant" data-icon="timer">timer</span>
+<input class="w-full pl-10 pr-4 py-2.5 bg-white border border-outline-variant rounded-xl focus:ring-2 focus:ring-primary focus:border-primary transition-all outline-none font-body-md text-body-md" id="waktu_selesai" name="waktu_selesai" required="" type="time">
+</div>
+</div>
+</div>
+<!-- Tujuan Kegiatan -->
+<div class="space-y-2">
+<label class="block font-label text-label text-on-surface" for="tujuan">Tujuan Kegiatan</label>
+<textarea class="w-full p-4 bg-white border border-outline-variant rounded-xl focus:ring-2 focus:ring-primary focus:border-primary transition-all outline-none font-body-md text-body-md" id="tujuan" name="tujuan" placeholder="Contoh: Rapat Koordinasi Himpunan Mahasiswa Informatika" required="" rows="3"></textarea>
+</div>
+<!-- Catatan Tambahan -->
+<div class="space-y-2">
+<label class="block font-label text-label text-on-surface" for="catatan">Catatan Tambahan (Opsional)</label>
+<textarea class="w-full p-4 bg-white border border-outline-variant rounded-xl focus:ring-2 focus:ring-primary focus:border-primary transition-all outline-none font-body-md text-body-md" id="catatan" name="catatan" placeholder="Sebutkan jika ada kebutuhan khusus (misal: butuh proyektor tambahan)" rows="2"></textarea>
+</div>
+</form>
+</section>
+</div>
+<!-- Sticky Summary Sidebar -->
+<aside class="w-full lg:w-80 lg:sticky lg:top-24 space-y-4">
+<div class="bg-surface-container-lowest border border-outline-variant rounded-2xl overflow-hidden shadow-sm">
+<div class="bg-primary text-on-primary-container p-4">
+<h4 class="font-label text-label">Ringkasan Peminjaman</h4>
+</div>
+<div class="p-5 space-y-4">
+<div class="space-y-3 pb-4 border-b border-outline-variant">
+<div class="flex justify-between items-start">
+<span class="text-on-surface-variant font-body-sm text-body-sm">Ruangan</span>
+<span class="text-on-surface font-label text-label text-right">Lab Komputer 1 (L-101)</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-on-surface-variant font-body-sm text-body-sm">Tanggal</span>
+<span class="text-on-surface font-label text-label" id="summary-date">-</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-on-surface-variant font-body-sm text-body-sm">Waktu</span>
+<span class="text-on-surface font-label text-label" id="summary-time">-</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-on-surface-variant font-body-sm text-body-sm">Durasi</span>
+<span class="text-on-surface font-label text-label" id="summary-duration">-</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-on-surface-variant font-body-sm text-body-sm">Peserta</span>
+<span class="text-on-surface font-label text-label" id="summary-participants">0 Orang</span>
+</div>
+</div>
+<div class="flex items-center gap-3 p-3 bg-info-container text-primary rounded-lg">
+<span class="material-symbols-outlined" data-icon="info">info</span>
+<p class="font-body-sm text-body-sm leading-tight">Pengajuan akan diverifikasi oleh Admin Laboratorium dalam 1x24 jam.</p>
+</div>
+<div class="space-y-3">
+<button class="w-full bg-primary text-on-primary py-3 rounded-xl font-label text-label hover:bg-primary-hover transition-colors shadow-md flex items-center justify-center gap-2" type="submit">
+                                Ajukan Peminjaman <span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</button>
+<button class="w-full bg-white text-primary border border-primary py-3 rounded-xl font-label text-label hover:bg-surface-container-low transition-colors" type="button">
+                                Kembali
+                            </button>
+</div>
+</div>
+</div>
+<!-- Availability Badge -->
+<div class="bg-success-container text-success p-4 rounded-xl flex items-center gap-3">
+<span class="material-symbols-outlined fill-1" data-icon="verified" style="font-variation-settings: 'FILL' 1;">verified</span>
+<div>
+<p class="font-label text-label leading-none">Tersedia</p>
+<p class="text-[11px] opacity-80 mt-1">Status ruangan saat ini tidak ada jadwal peminjaman.</p>
+</div>
+</div>
+</aside>
+</div>
+</main>
+<!-- Bottom Mobile Nav -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-2 bg-surface border-t border-outline-variant shadow-lg md:hidden">
+<div class="flex flex-col items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-caption text-caption-mobile">Dashboard</span>
+</div>
+<div class="flex flex-col items-center justify-center bg-secondary-container text-primary rounded-xl px-3 py-1">
+<span class="material-symbols-outlined" data-icon="meeting_room">meeting_room</span>
+<span class="font-caption text-caption-mobile">Ruangan</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="assignment">assignment</span>
+<span class="font-caption text-caption-mobile">Peminjaman</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-caption text-caption-mobile">Profil</span>
+</div>
+</nav>
+<script>
+        // Micro-interactions and Dynamic Summary Update
+        const inputs = {
+            date: document.getElementById('tanggal'),
+            participants: document.getElementById('peserta'),
+            start: document.getElementById('waktu_mulai'),
+            end: document.getElementById('waktu_selesai')
+        };
+
+        const summaries = {
+            date: document.getElementById('summary-date'),
+            participants: document.getElementById('summary-participants'),
+            time: document.getElementById('summary-time'),
+            duration: document.getElementById('summary-duration')
+        };
+
+        function calculateDuration(start, end) {
+            if (!start || !end) return "-";
+            const [sh, sm] = start.split(':').map(Number);
+            const [eh, em] = end.split(':').map(Number);
+            
+            let diff = (eh * 60 + em) - (sh * 60 + sm);
+            if (diff < 0) return "Waktu tidak valid";
+            
+            const hours = Math.floor(diff / 60);
+            const mins = diff % 60;
+            return `${hours} Jam ${mins} Menit`;
+        }
+
+        inputs.date.addEventListener('input', (e) => {
+            const date = new Date(e.target.value);
+            summaries.date.innerText = e.target.value ? date.toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' }) : "-";
+        });
+
+        inputs.participants.addEventListener('input', (e) => {
+            summaries.participants.innerText = `${e.target.value || 0} Orang`;
+        });
+
+        const updateTimeSummary = () => {
+            const startVal = inputs.start.value;
+            const endVal = inputs.end.value;
+            summaries.time.innerText = (startVal && endVal) ? `${startVal} - ${endVal}` : "-";
+            summaries.duration.innerText = calculateDuration(startVal, endVal);
+        };
+
+        inputs.start.addEventListener('input', updateTimeSummary);
+        inputs.end.addEventListener('input', updateTimeSummary);
+
+        // Visual hover effects for inputs
+        document.querySelectorAll('input, textarea').forEach(el => {
+            el.addEventListener('focus', () => {
+                el.parentElement.classList.add('shadow-sm');
+            });
+            el.addEventListener('blur', () => {
+                el.parentElement.classList.remove('shadow-sm');
+            });
+        });
+    </script>
+</body></html>

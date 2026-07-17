@@ -1,0 +1,438 @@
+<!DOCTYPE html><html class="light" lang="id"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Roomify Admin - Daftar Permohonan Peminjaman</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-container": "#ffede6",
+                        "danger-container": "#FEE2E2",
+                        "secondary-fixed-dim": "#b9c7df",
+                        "surface-container": "#ededf9",
+                        "outline-variant": "#c3c6d7",
+                        "on-primary-fixed": "#00174b",
+                        "text-muted": "#64748B",
+                        "success": "#15803D",
+                        "tertiary-fixed-dim": "#ffb596",
+                        "danger": "#B91C1C",
+                        "on-danger-container": "#7F1D1D",
+                        "surface-container-highest": "#e1e2ed",
+                        "neutral-container": "#F1F5F9",
+                        "secondary-fixed": "#d5e3fc",
+                        "outline": "#737686",
+                        "on-secondary-fixed": "#0d1c2e",
+                        "inverse-on-surface": "#f0f0fb",
+                        "on-tertiary-fixed-variant": "#7d2d00",
+                        "on-secondary": "#ffffff",
+                        "tertiary-container": "#bc4800",
+                        "on-primary-container": "#eeefff",
+                        "on-surface-variant": "#434655",
+                        "primary-container": "#DBEAFE",
+                        "primary-fixed-dim": "#b4c5ff",
+                        "success-container": "#DCFCE7",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-fixed-variant": "#3a485b",
+                        "on-success-container": "#14532D",
+                        "error": "#ba1a1a",
+                        "secondary": "#515f74",
+                        "primary-fixed": "#dbe1ff",
+                        "surface-container-high": "#e7e7f3",
+                        "inverse-primary": "#b4c5ff",
+                        "background": "#faf8ff",
+                        "primary-hover": "#1D4ED8",
+                        "surface-dim": "#d9d9e5",
+                        "surface-container-low": "#f3f3fe",
+                        "on-surface": "#191b23",
+                        "error-container": "#ffdad6",
+                        "on-error-container": "#93000a",
+                        "text-primary": "#0F172A",
+                        "surface-variant": "#e1e2ed",
+                        "primary": "#004ac6",
+                        "surface": "#faf8ff",
+                        "secondary-container": "#d5e3fc",
+                        "on-secondary-container": "#57657a",
+                        "on-background": "#191b23",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-subtle": "#F1F5F9",
+                        "on-primary-fixed-variant": "#003ea8",
+                        "on-warning-container": "#78350F",
+                        "warning": "#B45309",
+                        "tertiary-fixed": "#ffdbcd",
+                        "surface-bright": "#faf8ff",
+                        "border-strong": "#CBD5E1",
+                        "surface-tint": "#0053db",
+                        "tertiary": "#943700",
+                        "info-container": "#DBEAFE",
+                        "on-tertiary-fixed": "#360f00",
+                        "warning-container": "#FEF3C7",
+                        "on-error": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "inverse-surface": "#2e3039"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "1": "4px",
+                        "gutter": "16px",
+                        "4": "16px",
+                        "8": "32px",
+                        "margin-mobile": "16px",
+                        "12": "48px",
+                        "3": "12px",
+                        "6": "24px",
+                        "10": "40px",
+                        "5": "20px",
+                        "margin-desktop": "24px",
+                        "16": "64px",
+                        "2": "8px"
+                    },
+                    "fontFamily": {
+                        "display-mobile": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "display": ["Inter"],
+                        "h3": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "h2": ["Inter"],
+                        "caption": ["Inter"],
+                        "body-md": ["Inter"],
+                        "h1-mobile": ["Inter"],
+                        "label": ["Inter"],
+                        "h1": ["Inter"]
+                    },
+                    "fontSize": {
+                        "display-mobile": ["28px", { "lineHeight": "34px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-lg": ["1rem", { "lineHeight": "1.625rem", "fontWeight": "400" }],
+                        "display": ["2.25rem", { "lineHeight": "2.75rem", "letterSpacing": "-0.03em", "fontWeight": "700" }],
+                        "h3": ["1.25rem", { "lineHeight": "1.75rem", "fontWeight": "600" }],
+                        "body-sm": ["0.8125rem", { "lineHeight": "1.25rem", "fontWeight": "400" }],
+                        "h2": ["1.5rem", { "lineHeight": "2rem", "letterSpacing": "-0.015em", "fontWeight": "700" }],
+                        "caption": ["0.75rem", { "lineHeight": "1rem", "fontWeight": "500" }],
+                        "body-md": ["0.875rem", { "lineHeight": "1.375rem", "fontWeight": "400" }],
+                        "h1-mobile": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "700" }],
+                        "label": ["0.875rem", { "lineHeight": "1.25rem", "fontWeight": "600" }],
+                        "h1": ["2rem", { "lineHeight": "2.5rem", "letterSpacing": "-0.025em", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        .custom-scrollbar::-webkit-scrollbar { width: 6px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
+    </style>
+</head>
+<body class="bg-background text-on-surface">
+<!-- SideNavBar -->
+<aside class="fixed left-0 top-0 h-screen w-64 bg-surface dark:bg-on-background border-r border-outline-variant dark:border-outline flex flex-col p-6 hidden md:flex z-50">
+<div class="mb-10">
+<h1 class="text-h2 font-h2 text-primary dark:text-primary-fixed">Roomify</h1>
+<p class="font-label text-label text-secondary opacity-70">Campus Management</p>
+</div>
+<nav class="flex-grow space-y-2">
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl transition-colors duration-200 text-secondary dark:text-secondary-fixed-dim hover:bg-surface-container-low" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-label text-label">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl transition-colors duration-200 text-secondary dark:text-secondary-fixed-dim hover:bg-surface-container-low" href="#">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+<span class="font-label text-label">Cari Ruangan</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl transition-colors duration-200 text-primary dark:text-primary-fixed font-bold border-r-4 border-primary bg-primary-container/10" href="#">
+<span class="material-symbols-outlined" data-icon="history">history</span>
+<span class="font-label text-label">Peminjaman Saya</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl transition-colors duration-200 text-secondary dark:text-secondary-fixed-dim hover:bg-surface-container-low" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-label text-label">Profil</span>
+</a>
+</nav>
+<div class="mt-auto pt-6 border-t border-outline-variant">
+<div class="flex items-center gap-3 px-4 py-2">
+<img class="w-10 h-10 rounded-full object-cover" data-alt="A professional headshot of a campus administrator in a modern office environment, soft daylight, corporate portrait style with a clean background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDDt7iA6g98MTZwNPba9dTSvIArzRy8i4iZk6H1KjXCNhrI_01jXeviAYo_sC3LlpEa3rhG-Dp9i8rt2prEl51cqI3V7KChhEG7Qp3-Pu3fEtiD8R6OqbKGQXKWgTCpL3oHRXVif5iB-3pRjbvzSdh1V5Npam7jYGp--WQk8k0ma0wwUhHg5K2LZBr0QHBVdheM1OxMDY_awxT4ytKWh8CaLGe2hZxJGibDIB8-nUk4rYx7Teo6eNcNuA">
+<div class="overflow-hidden">
+<p class="font-label text-label truncate">Admin Roomify</p>
+<p class="font-caption text-caption text-secondary truncate">admin@university.ac.id</p>
+</div>
+</div>
+</div>
+</aside>
+<!-- TopAppBar -->
+<header class="flex justify-between items-center h-16 px-6 md:ml-64 bg-surface dark:bg-on-background border-b border-outline-variant dark:border-outline fixed top-0 right-0 left-0 z-40">
+<div class="flex items-center gap-4">
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+<h2 class="text-h3 font-h3 text-primary dark:text-primary-fixed">Daftar Permohonan Peminjaman</h2>
+</div>
+<div class="flex items-center gap-4">
+<div class="hidden sm:flex items-center bg-surface-container-low px-3 py-1.5 rounded-full border border-outline-variant">
+<span class="material-symbols-outlined text-secondary text-[20px]" data-icon="search">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-body-sm w-48 placeholder:text-outline" placeholder="Cari Kode atau Mahasiswa..." type="text">
+</div>
+<button class="text-on-surface-variant hover:text-primary transition-opacity cursor-pointer">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="text-on-surface-variant hover:text-primary transition-opacity cursor-pointer">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+</button>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="pt-20 pb-20 md:pb-8 px-6 md:ml-64 min-h-screen">
+<!-- Status Tabs & Filters -->
+<div class="mb-8 space-y-6">
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
+<!-- Tabs -->
+<div class="flex items-center gap-1 bg-surface-container-low p-1 rounded-xl w-fit overflow-x-auto no-scrollbar">
+<button class="px-5 py-2.5 rounded-lg text-body-md font-label whitespace-nowrap bg-surface-container-highest text-primary shadow-sm">
+                        Semua
+                    </button>
+<button class="px-5 py-2.5 rounded-lg text-body-md font-label whitespace-nowrap text-secondary flex items-center gap-2 hover:bg-surface-variant/50">
+                        Menunggu Persetujuan
+                        <span class="bg-primary text-on-primary text-[10px] px-1.5 py-0.5 rounded-full">12</span>
+</button>
+<button class="px-5 py-2.5 rounded-lg text-body-md font-label whitespace-nowrap text-secondary hover:bg-surface-variant/50">
+                        Disetujui
+                    </button>
+<button class="px-5 py-2.5 rounded-lg text-body-md font-label whitespace-nowrap text-secondary hover:bg-surface-variant/50">
+                        Ditolak
+                    </button>
+<button class="px-5 py-2.5 rounded-lg text-body-md font-label whitespace-nowrap text-secondary hover:bg-surface-variant/50">
+                        Selesai
+                    </button>
+</div>
+<!-- Filters -->
+<div class="flex items-center gap-3">
+<div class="flex items-center gap-2 bg-white border border-outline-variant px-4 py-2.5 rounded-xl text-body-md text-secondary">
+<span class="material-symbols-outlined text-[18px]" data-icon="calendar_month">calendar_month</span>
+<span>Rentang Tanggal</span>
+<span class="material-symbols-outlined text-[18px]" data-icon="expand_more">expand_more</span>
+</div>
+<button class="bg-primary hover:bg-primary-hover text-on-primary flex items-center gap-2 px-5 py-2.5 rounded-xl font-label transition-all shadow-sm">
+<span class="material-symbols-outlined text-[18px]" data-icon="filter_list">filter_list</span>
+                        Filter
+                    </button>
+</div>
+</div>
+</div>
+<!-- Table Card -->
+<div class="bg-white rounded-2xl border border-outline-variant overflow-hidden shadow-sm">
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low/50 border-b border-outline-variant">
+<th class="px-6 py-4 font-label text-label text-secondary uppercase tracking-wider">Kode Booking</th>
+<th class="px-6 py-4 font-label text-label text-secondary uppercase tracking-wider">Mahasiswa</th>
+<th class="px-6 py-4 font-label text-label text-secondary uppercase tracking-wider">Ruangan</th>
+<th class="px-6 py-4 font-label text-label text-secondary uppercase tracking-wider">Tanggal &amp; Waktu</th>
+<th class="px-6 py-4 font-label text-label text-secondary uppercase tracking-wider">Tujuan</th>
+<th class="px-6 py-4 font-label text-label text-secondary uppercase tracking-wider">Status</th>
+<th class="px-6 py-4 font-label text-label text-secondary uppercase tracking-wider text-right">Aksi</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant">
+<!-- Row 1 -->
+<tr class="hover:bg-surface-container-lowest transition-colors">
+<td class="px-6 py-5 font-body-md font-bold text-primary">#RM-2024-001</td>
+<td class="px-6 py-5">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-primary-container text-primary flex items-center justify-center font-bold text-caption">AS</div>
+<div>
+<p class="font-label text-body-md">Andi Saputra</p>
+<p class="text-body-sm text-secondary">210982341</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-5 font-body-md">Lab Komputer 03</td>
+<td class="px-6 py-5">
+<p class="font-label text-body-md">24 Mei 2024</p>
+<p class="text-body-sm text-secondary">08:00 - 12:00 WIB</p>
+</td>
+<td class="px-6 py-5">
+<p class="text-body-md truncate max-w-[150px]">Rapat Organisasi Himpunan</p>
+</td>
+<td class="px-6 py-5">
+<span class="px-3 py-1 rounded-full bg-warning-container text-warning text-caption font-bold flex items-center w-fit gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-warning"></span>
+                                    Menunggu
+                                </span>
+</td>
+<td class="px-6 py-5 text-right">
+<button class="bg-primary text-on-primary px-4 py-2 rounded-lg font-label text-body-sm hover:bg-primary-hover transition-colors">Periksa</button>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-surface-container-lowest transition-colors">
+<td class="px-6 py-5 font-body-md font-bold text-primary">#RM-2024-002</td>
+<td class="px-6 py-5">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-secondary-container text-secondary flex items-center justify-center font-bold text-caption">BK</div>
+<div>
+<p class="font-label text-body-md">Budi Kusuma</p>
+<p class="text-body-sm text-secondary">210982552</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-5 font-body-md">Auditorium Utama</td>
+<td class="px-6 py-5">
+<p class="font-label text-body-md">25 Mei 2024</p>
+<p class="text-body-sm text-secondary">13:00 - 17:00 WIB</p>
+</td>
+<td class="px-6 py-5">
+<p class="text-body-md truncate max-w-[150px]">Seminar Internasional IT</p>
+</td>
+<td class="px-6 py-5">
+<span class="px-3 py-1 rounded-full bg-success-container text-success text-caption font-bold flex items-center w-fit gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-success"></span>
+                                    Disetujui
+                                </span>
+</td>
+<td class="px-6 py-5 text-right">
+<button class="bg-surface-container-highest text-secondary px-4 py-2 rounded-lg font-label text-body-sm hover:bg-outline-variant transition-colors">Detail</button>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-surface-container-lowest transition-colors">
+<td class="px-6 py-5 font-body-md font-bold text-primary">#RM-2024-003</td>
+<td class="px-6 py-5">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-tertiary-fixed text-tertiary flex items-center justify-center font-bold text-caption">CM</div>
+<div>
+<p class="font-label text-body-md">Citra Maharani</p>
+<p class="text-body-sm text-secondary">210982711</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-5 font-body-md">R. Diskusi 04</td>
+<td class="px-6 py-5">
+<p class="font-label text-body-md">26 Mei 2024</p>
+<p class="text-body-sm text-secondary">10:00 - 12:00 WIB</p>
+</td>
+<td class="px-6 py-5">
+<p class="text-body-md truncate max-w-[150px]">Kerja Kelompok Makroekonomi</p>
+</td>
+<td class="px-6 py-5">
+<span class="px-3 py-1 rounded-full bg-danger-container text-danger text-caption font-bold flex items-center w-fit gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-danger"></span>
+                                    Ditolak
+                                </span>
+</td>
+<td class="px-6 py-5 text-right">
+<button class="bg-surface-container-highest text-secondary px-4 py-2 rounded-lg font-label text-body-sm hover:bg-outline-variant transition-colors">Detail</button>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-surface-container-lowest transition-colors">
+<td class="px-6 py-5 font-body-md font-bold text-primary">#RM-2024-004</td>
+<td class="px-6 py-5">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-primary-container text-primary flex items-center justify-center font-bold text-caption">DR</div>
+<div>
+<p class="font-label text-body-md">Dedi Ramadhan</p>
+<p class="text-body-sm text-secondary">210982990</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-5 font-body-md">Ruang Kelas A102</td>
+<td class="px-6 py-5">
+<p class="font-label text-body-md">20 Mei 2024</p>
+<p class="text-body-sm text-secondary">09:00 - 11:00 WIB</p>
+</td>
+<td class="px-6 py-5">
+<p class="text-body-md truncate max-w-[150px]">Ujian Susulan Statistika</p>
+</td>
+<td class="px-6 py-5">
+<span class="px-3 py-1 rounded-full bg-info-container text-primary text-caption font-bold flex items-center w-fit gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                                    Selesai
+                                </span>
+</td>
+<td class="px-6 py-5 text-right">
+<button class="bg-surface-container-highest text-secondary px-4 py-2 rounded-lg font-label text-body-sm hover:bg-outline-variant transition-colors">Detail</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination -->
+<div class="px-6 py-4 bg-surface-container-low/30 border-t border-outline-variant flex items-center justify-between">
+<p class="text-body-sm text-secondary font-body-sm">Menampilkan <span class="font-bold text-on-surface">1 - 4</span> dari <span class="font-bold text-on-surface">48</span> permohonan</p>
+<div class="flex items-center gap-2">
+<button class="w-10 h-10 flex items-center justify-center rounded-lg border border-outline-variant text-secondary hover:bg-surface hover:text-primary transition-all disabled:opacity-30" disabled="">
+<span class="material-symbols-outlined" data-icon="chevron_left">chevron_left</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg bg-primary text-on-primary font-bold shadow-sm">1</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg border border-outline-variant text-secondary hover:bg-surface hover:text-primary transition-all">2</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg border border-outline-variant text-secondary hover:bg-surface hover:text-primary transition-all">3</button>
+<span class="text-secondary px-2">...</span>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg border border-outline-variant text-secondary hover:bg-surface hover:text-primary transition-all">12</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg border border-outline-variant text-secondary hover:bg-surface hover:text-primary transition-all">
+<span class="material-symbols-outlined" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 bg-surface dark:bg-on-background flex justify-around items-center px-4 py-2 md:hidden border-t border-outline-variant shadow-lg">
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-secondary-fixed-variant" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-caption text-[10px]">Dashboard</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-secondary-fixed-variant" href="#">
+<span class="material-symbols-outlined" data-icon="meeting_room">meeting_room</span>
+<span class="font-caption text-[10px]">Ruangan</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-secondary-container dark:bg-on-secondary-fixed-variant text-primary dark:text-primary-fixed rounded-xl px-3 py-1" href="#">
+<span class="material-symbols-outlined" data-icon="assignment">assignment</span>
+<span class="font-caption text-[10px]">Peminjaman</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-secondary-fixed-variant" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-caption text-[10px]">Profil</span>
+</a>
+</nav>
+<script>
+        // Micro-interactions
+        document.querySelectorAll('button, a').forEach(el => {
+            el.addEventListener('mousedown', () => {
+                el.style.transform = 'scale(0.97)';
+            });
+            el.addEventListener('mouseup', () => {
+                el.style.transform = 'scale(1)';
+            });
+            el.addEventListener('mouseleave', () => {
+                el.style.transform = 'scale(1)';
+            });
+        });
+
+        // Tab selection logic simulation
+        const tabs = document.querySelectorAll('.flex.overflow-x-auto button');
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                tabs.forEach(t => {
+                    t.classList.remove('bg-surface-container-highest', 'text-primary', 'shadow-sm');
+                    t.classList.add('text-secondary', 'hover:bg-surface-variant/50');
+                });
+                tab.classList.remove('text-secondary', 'hover:bg-surface-variant/50');
+                tab.classList.add('bg-surface-container-highest', 'text-primary', 'shadow-sm');
+            });
+        });
+    </script>
+</body></html>

@@ -1,0 +1,457 @@
+<!DOCTYPE html><html class="light" lang="id"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Roomify Admin - Log Aktivitas</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "error": "#ba1a1a",
+                    "surface-bright": "#faf8ff",
+                    "error-container": "#ffdad6",
+                    "primary-hover": "#1D4ED8",
+                    "surface-container": "#ededf9",
+                    "inverse-on-surface": "#f0f0fb",
+                    "surface-dim": "#d9d9e5",
+                    "inverse-surface": "#2e3039",
+                    "on-tertiary-container": "#ffede6",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-container-highest": "#e1e2ed",
+                    "on-secondary-fixed-variant": "#3a485b",
+                    "primary-fixed-dim": "#b4c5ff",
+                    "inverse-primary": "#b4c5ff",
+                    "surface-container-low": "#f3f3fe",
+                    "tertiary-fixed": "#ffdbcd",
+                    "surface-subtle": "#F1F5F9",
+                    "outline": "#737686",
+                    "surface-tint": "#0053db",
+                    "secondary-fixed": "#d5e3fc",
+                    "on-danger-container": "#7F1D1D",
+                    "text-muted": "#64748B",
+                    "tertiary-container": "#bc4800",
+                    "info-container": "#DBEAFE",
+                    "on-surface-variant": "#434655",
+                    "primary-container": "#2563eb",
+                    "on-primary-container": "#1E3A8A",
+                    "surface-variant": "#e1e2ed",
+                    "danger": "#B91C1C",
+                    "on-surface": "#191b23",
+                    "on-background": "#191b23",
+                    "success-container": "#DCFCE7",
+                    "on-success-container": "#14532D",
+                    "on-secondary-fixed": "#0d1c2e",
+                    "on-primary-fixed": "#00174b",
+                    "success": "#15803D",
+                    "primary-fixed": "#dbe1ff",
+                    "on-secondary-container": "#57657a",
+                    "text-primary": "#0F172A",
+                    "tertiary-fixed-dim": "#ffb596",
+                    "secondary-fixed-dim": "#b9c7df",
+                    "background": "#faf8ff",
+                    "on-tertiary": "#ffffff",
+                    "on-error": "#ffffff",
+                    "warning-container": "#FEF3C7",
+                    "on-error-container": "#93000a",
+                    "on-secondary": "#ffffff",
+                    "surface-container-high": "#e7e7f3",
+                    "on-warning-container": "#78350F",
+                    "warning": "#B45309",
+                    "on-tertiary-fixed-variant": "#7d2d00",
+                    "surface": "#faf8ff",
+                    "secondary": "#515f74",
+                    "secondary-container": "#d5e3fc",
+                    "outline-variant": "#c3c6d7",
+                    "primary": "#004ac6",
+                    "danger-container": "#FEE2E2",
+                    "on-tertiary-fixed": "#360f00",
+                    "neutral-container": "#F1F5F9",
+                    "tertiary": "#943700",
+                    "on-primary-fixed-variant": "#003ea8",
+                    "on-primary": "#ffffff",
+                    "border-strong": "#CBD5E1"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin-mobile": "16px",
+                    "4": "16px",
+                    "gutter": "16px",
+                    "3": "12px",
+                    "2": "8px",
+                    "8": "32px",
+                    "6": "24px",
+                    "margin-desktop": "24px",
+                    "10": "40px",
+                    "1": "4px",
+                    "5": "20px",
+                    "16": "64px",
+                    "12": "48px"
+            },
+            "fontFamily": {
+                    "display": ["Inter"],
+                    "label": ["Inter"],
+                    "body-md": ["Inter"],
+                    "h1": ["Inter"],
+                    "h2": ["Inter"],
+                    "h3": ["Inter"],
+                    "display-mobile": ["Inter"],
+                    "body-sm": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "h1-mobile": ["Inter"],
+                    "caption": ["Inter"]
+            },
+            "fontSize": {
+                    "display": ["2.25rem", {"lineHeight": "2.75rem", "letterSpacing": "-0.03em", "fontWeight": "700"}],
+                    "label": ["0.875rem", {"lineHeight": "1.25rem", "fontWeight": "600"}],
+                    "body-md": ["0.875rem", {"lineHeight": "1.375rem", "fontWeight": "400"}],
+                    "h1": ["2rem", {"lineHeight": "2.5rem", "letterSpacing": "-0.025em", "fontWeight": "700"}],
+                    "h2": ["1.5rem", {"lineHeight": "2rem", "letterSpacing": "-0.015em", "fontWeight": "700"}],
+                    "h3": ["1.25rem", {"lineHeight": "1.75rem", "fontWeight": "600"}],
+                    "display-mobile": ["28px", {"lineHeight": "34px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-sm": ["0.8125rem", {"lineHeight": "1.25rem", "fontWeight": "400"}],
+                    "body-lg": ["1rem", {"lineHeight": "1.625rem", "fontWeight": "400"}],
+                    "h1-mobile": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "700"}],
+                    "caption": ["0.75rem", {"lineHeight": "1rem", "fontWeight": "500"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #CBD5E1; border-radius: 10px; }
+        .drawer-transition { transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen flex overflow-hidden">
+<!-- SideNavBar (Desktop) -->
+<aside class="fixed left-0 top-0 h-screen w-64 bg-surface border-r border-outline-variant flex flex-col p-6 z-40 hidden md:flex">
+<div class="mb-10">
+<span class="text-h2 font-h2 text-primary">Roomify</span>
+<p class="font-body-sm text-body-sm text-secondary">Campus Management</p>
+</div>
+<nav class="flex-1 space-y-2">
+<a class="flex items-center gap-3 px-4 py-3 text-secondary hover:bg-surface-container-low rounded-xl transition-colors duration-200" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-label text-label">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-secondary hover:bg-surface-container-low rounded-xl transition-colors duration-200" href="#">
+<span class="material-symbols-outlined">search</span>
+<span class="font-label text-label">Cari Ruangan</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-primary font-bold border-r-4 border-primary bg-surface-container-low" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">history</span>
+<span class="font-label text-label">Log Aktivitas</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-secondary hover:bg-surface-container-low rounded-xl transition-colors duration-200" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label text-label">Profil</span>
+</a>
+</nav>
+<div class="mt-auto pt-6 border-t border-outline-variant">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center text-white font-bold">A</div>
+<div>
+<p class="font-label text-label text-text-primary">Admin Roomify</p>
+<p class="font-caption text-caption text-text-muted">Administrator</p>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 md:ml-64 flex flex-col h-screen overflow-hidden">
+<!-- TopAppBar -->
+<header class="h-16 px-6 bg-surface border-b border-outline-variant flex justify-between items-center z-30">
+<h1 class="text-h3 font-h3 text-primary md:hidden">Roomify</h1>
+<h1 class="text-h3 font-h3 text-text-primary hidden md:block">Log Aktivitas</h1>
+<div class="flex items-center gap-4">
+<button class="p-2 text-on-surface-variant hover:text-primary transition-opacity duration-150">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:text-primary transition-opacity duration-150">
+<span class="material-symbols-outlined">help</span>
+</button>
+<div class="w-8 h-8 rounded-full overflow-hidden border border-outline-variant md:hidden">
+<img class="w-full h-full object-cover" data-alt="A professional headshot of a campus administrator in a modern office setting. The lighting is bright and airy, reflecting a clean and professional academic environment. The style is crisp with a shallow depth of field, focusing on the friendly expression of the individual." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJcpu1hPay9xxtXNS6a5FSW98GXNPboVkepyXWkfGDZm4aTsv6D1c8xwd5b1DTl3olE_T2aazJV0HRxSJHeVjdpQ2MTYzpREmKY1gnLQNYsvYZHhdZiaHhn9MVKUgQuMLkRox1LV952r0hi9mEtO_AB-RVSTB81eoxoFPYMeICXgr4reIXvyPzeUtfKgRDiyhBzeCuNxbNJ0oTweJPpE90np6JryGluJuGJB4UuQtzzyhIE9XzdMWNaA">
+</div>
+</div>
+</header>
+<!-- Activity Log Content -->
+<div class="flex-1 overflow-y-auto p-4 md:p-8 space-y-6">
+<!-- Bento Stats / Summary (High-end UI Pattern) -->
+<div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+<div class="bg-surface p-6 rounded-xl border border-outline-variant shadow-sm flex flex-col">
+<span class="text-text-muted font-label text-label">Total Aktivitas</span>
+<span class="text-h1 font-h1 text-text-primary mt-1">1,284</span>
+<span class="text-success text-caption font-caption flex items-center gap-1 mt-2">
+<span class="material-symbols-outlined text-sm">trending_up</span> +12% hari ini
+                    </span>
+</div>
+<div class="bg-surface p-6 rounded-xl border border-outline-variant shadow-sm flex flex-col">
+<span class="text-text-muted font-label text-label">Login Unik</span>
+<span class="text-h1 font-h1 text-text-primary mt-1">842</span>
+<span class="text-text-muted text-caption font-caption mt-2">24 Jam Terakhir</span>
+</div>
+<div class="bg-surface p-6 rounded-xl border border-outline-variant shadow-sm flex flex-col md:col-span-2 relative overflow-hidden group">
+<div class="relative z-10">
+<span class="text-text-muted font-label text-label">Keamanan Sistem</span>
+<span class="text-h1 font-h1 text-success mt-1">Normal</span>
+<p class="text-text-muted text-body-sm mt-2">Tidak ada aktivitas mencurigakan yang terdeteksi pada 48 jam terakhir.</p>
+</div>
+<div class="absolute right-0 bottom-0 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-[120px]" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+</div>
+</div>
+</div>
+<!-- Filters Section -->
+<div class="bg-surface p-4 rounded-xl border border-outline-variant flex flex-wrap items-center gap-4">
+<div class="flex-1 min-w-[240px] relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline">search</span>
+<input class="w-full pl-10 pr-4 py-2 bg-background border-outline-variant rounded-lg font-body-md text-body-md focus:ring-2 focus:ring-primary focus:border-primary transition-all" placeholder="Cari deskripsi atau aktor..." type="text">
+</div>
+<div class="flex items-center gap-3">
+<select class="bg-background border-outline-variant rounded-lg px-4 py-2 font-body-md text-body-md focus:ring-2 focus:ring-primary">
+<option>Semua Aktor</option>
+<option>Administrator</option>
+<option>Mahasiswa</option>
+<option>Dosen</option>
+</select>
+<select class="bg-background border-outline-variant rounded-lg px-4 py-2 font-body-md text-body-md focus:ring-2 focus:ring-primary">
+<option>Semua Aksi</option>
+<option>Login</option>
+<option>Pemesanan</option>
+<option>Pembatalan</option>
+<option>Update Profil</option>
+</select>
+<button class="bg-primary text-on-primary px-4 py-2 rounded-lg font-label text-label hover:bg-primary-hover transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">filter_list</span>
+                        Terapkan
+                    </button>
+</div>
+</div>
+<!-- Log Table -->
+<div class="bg-surface rounded-xl border border-outline-variant shadow-sm overflow-hidden">
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead class="bg-surface-container-low border-b border-outline-variant">
+<tr>
+<th class="px-6 py-4 font-label text-label text-text-primary uppercase tracking-wider">Waktu</th>
+<th class="px-6 py-4 font-label text-label text-text-primary uppercase tracking-wider">Aktor</th>
+<th class="px-6 py-4 font-label text-label text-text-primary uppercase tracking-wider">Aksi</th>
+<th class="px-6 py-4 font-label text-label text-text-primary uppercase tracking-wider">Entitas</th>
+<th class="px-6 py-4 font-label text-label text-text-primary uppercase tracking-wider">Deskripsi</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant">
+<!-- Row 1 -->
+<tr class="hover:bg-surface-container-low cursor-pointer transition-colors group" onclick="toggleDrawer(true, 'log-1')">
+<td class="px-6 py-4 font-body-md text-body-md text-text-primary whitespace-nowrap">24 Okt 2023, 14:20</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-secondary-container flex items-center justify-center text-xs font-bold text-on-secondary-container">BD</div>
+<span class="font-body-md text-body-md text-text-primary">Budi Darmawan</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-info-container text-on-primary-container">
+                                        Booking
+                                    </span>
+</td>
+<td class="px-6 py-4 font-body-sm text-body-sm text-text-muted">Ruang Rapat 402</td>
+<td class="px-6 py-4 font-body-sm text-body-sm text-text-muted truncate max-w-xs">Melakukan pemesanan ruangan untuk Sidang Skripsi...</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-surface-container-low cursor-pointer transition-colors group" onclick="toggleDrawer(true, 'log-2')">
+<td class="px-6 py-4 font-body-md text-body-md text-text-primary whitespace-nowrap">24 Okt 2023, 13:45</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-primary-container flex items-center justify-center text-xs font-bold text-white">AD</div>
+<span class="font-body-md text-body-md text-text-primary">Admin System</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-warning-container text-on-warning-container">
+                                        Update
+                                    </span>
+</td>
+<td class="px-6 py-4 font-body-sm text-body-sm text-text-muted">User ID #882</td>
+<td class="px-6 py-4 font-body-sm text-body-sm text-text-muted truncate max-w-xs">Mengubah hak akses user dari Mahasiswa ke Alumni.</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-surface-container-low cursor-pointer transition-colors group" onclick="toggleDrawer(true, 'log-3')">
+<td class="px-6 py-4 font-body-md text-body-md text-text-primary whitespace-nowrap">24 Okt 2023, 12:10</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-secondary-container flex items-center justify-center text-xs font-bold text-on-secondary-container">SR</div>
+<span class="font-body-md text-body-md text-text-primary">Siti Rahma</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-danger-container text-on-danger-container">
+                                        Cancel
+                                    </span>
+</td>
+<td class="px-6 py-4 font-body-sm text-body-sm text-text-muted">Lab Komputer B</td>
+<td class="px-6 py-4 font-body-sm text-body-sm text-text-muted truncate max-w-xs">Membatalkan pemesanan jadwal praktikum mandiri.</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-surface-container-low cursor-pointer transition-colors group" onclick="toggleDrawer(true, 'log-4')">
+<td class="px-6 py-4 font-body-md text-body-md text-text-primary whitespace-nowrap">24 Okt 2023, 10:05</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-success-container flex items-center justify-center text-xs font-bold text-on-success-container">AN</div>
+<span class="font-body-md text-body-md text-text-primary">Andi Nugraha</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-success-container text-on-success-container">
+                                        Login
+                                    </span>
+</td>
+<td class="px-6 py-4 font-body-sm text-body-sm text-text-muted">Web Portal</td>
+<td class="px-6 py-4 font-body-sm text-body-sm text-text-muted truncate max-w-xs">Berhasil masuk ke sistem via Chrome Desktop.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination -->
+<div class="px-6 py-4 bg-surface border-t border-outline-variant flex items-center justify-between">
+<span class="text-caption font-caption text-text-muted">Menampilkan 1-4 dari 1,284 hasil</span>
+<div class="flex gap-2">
+<button class="p-2 border border-outline-variant rounded-lg hover:bg-surface-container-low disabled:opacity-50" disabled="">
+<span class="material-symbols-outlined text-sm">chevron_left</span>
+</button>
+<button class="p-2 border border-outline-variant rounded-lg bg-primary text-on-primary">1</button>
+<button class="p-2 border border-outline-variant rounded-lg hover:bg-surface-container-low">2</button>
+<button class="p-2 border border-outline-variant rounded-lg hover:bg-surface-container-low">3</button>
+<button class="p-2 border border-outline-variant rounded-lg hover:bg-surface-container-low">
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Right Side Detail Drawer -->
+<div class="fixed inset-0 bg-black/40 z-50 hidden opacity-0 transition-opacity duration-300" id="backdrop" onclick="toggleDrawer(false)"></div>
+<div class="fixed right-0 top-0 h-screen w-full md:w-96 bg-surface z-[60] shadow-2xl translate-x-full drawer-transition flex flex-col" id="detailDrawer">
+<div class="p-6 border-b border-outline-variant flex justify-between items-center bg-surface">
+<h2 class="text-h3 font-h3 text-text-primary">Detail Aktivitas</h2>
+<button class="p-2 hover:bg-surface-container-low rounded-full transition-colors" onclick="toggleDrawer(false)">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<div class="flex-1 overflow-y-auto p-6 space-y-8" id="drawerContent">
+<!-- Dynamic Content Area -->
+<div class="space-y-6">
+<div class="flex flex-col gap-1">
+<span class="text-caption font-caption text-text-muted uppercase">Status Transaksi</span>
+<div class="flex items-center gap-2 text-success font-bold">
+<span class="material-symbols-outlined">check_circle</span>
+<span>Berhasil</span>
+</div>
+</div>
+<div class="space-y-4">
+<div class="grid grid-cols-2 gap-4">
+<div class="flex flex-col">
+<span class="text-caption font-caption text-text-muted">Aktor</span>
+<span class="font-label text-label" id="actorName">Budi Darmawan</span>
+</div>
+<div class="flex flex-col">
+<span class="text-caption font-caption text-text-muted">Role</span>
+<span class="font-body-md text-body-md">Mahasiswa</span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="flex flex-col">
+<span class="text-caption font-caption text-text-muted">Waktu</span>
+<span class="font-body-md text-body-md">24 Okt 2023, 14:20:12</span>
+</div>
+<div class="flex flex-col">
+<span class="text-caption font-caption text-text-muted">IP Address</span>
+<span class="font-body-md text-body-md">192.168.1.104</span>
+</div>
+</div>
+</div>
+<hr class="border-outline-variant">
+<div class="space-y-4">
+<div class="flex flex-col gap-1">
+<span class="text-caption font-caption text-text-muted">Deskripsi Lengkap</span>
+<p class="font-body-md text-body-md bg-surface-container-low p-4 rounded-xl border border-outline-variant italic">
+                            "Melakukan pemesanan ruangan untuk Sidang Skripsi semester ganjil. Fasilitas yang diminta: Proyektor, AC, Whiteboard, dan Kabel HDMI. Durasi: 2 Jam."
+                        </p>
+</div>
+<div class="flex flex-col gap-1">
+<span class="text-caption font-caption text-text-muted">Detail Teknis (Metadata JSON)</span>
+<pre class="bg-inverse-surface text-inverse-on-surface p-4 rounded-xl font-mono text-[10px] overflow-x-auto">{
+  "request_id": "REQ-77421",
+  "room_id": "RM-402",
+  "category": "academic",
+  "booking_source": "mobile_app_v2.1",
+  "lat_lng": "-6.2088, 106.8456"
+}
+                        </pre>
+</div>
+</div>
+</div>
+</div>
+<div class="p-6 border-t border-outline-variant bg-surface-container-low flex gap-3">
+<button class="flex-1 bg-surface border border-outline-variant text-text-primary px-4 py-3 rounded-xl font-label text-label hover:bg-surface-container-high transition-colors">
+                Unduh PDF
+            </button>
+<button class="flex-1 bg-primary text-on-primary px-4 py-3 rounded-xl font-label text-label hover:bg-primary-hover transition-colors">
+                Hubungi User
+            </button>
+</div>
+</div>
+<!-- BottomNavBar (Mobile) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-2 bg-surface border-t border-outline-variant shadow-lg md:hidden">
+<div class="flex flex-col items-center justify-center text-on-surface-variant font-caption text-caption-mobile">
+<span class="material-symbols-outlined">dashboard</span>
+<span>Dashboard</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant font-caption text-caption-mobile">
+<span class="material-symbols-outlined">meeting_room</span>
+<span>Ruangan</span>
+</div>
+<div class="flex flex-col items-center justify-center bg-secondary-container text-primary rounded-xl px-3 py-1 font-caption text-caption-mobile">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">assignment</span>
+<span>Aktivitas</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant font-caption text-caption-mobile">
+<span class="material-symbols-outlined">person</span>
+<span>Profil</span>
+</div>
+</nav>
+<script>
+        function toggleDrawer(show, id) {
+            const drawer = document.getElementById('detailDrawer');
+            const backdrop = document.getElementById('backdrop');
+            
+            if (show) {
+                drawer.classList.remove('translate-x-full');
+                backdrop.classList.remove('hidden');
+                setTimeout(() => backdrop.classList.add('opacity-100'), 10);
+            } else {
+                drawer.classList.add('translate-x-full');
+                backdrop.classList.remove('opacity-100');
+                setTimeout(() => backdrop.classList.add('hidden'), 300);
+            }
+        }
+    </script>
+</body></html>

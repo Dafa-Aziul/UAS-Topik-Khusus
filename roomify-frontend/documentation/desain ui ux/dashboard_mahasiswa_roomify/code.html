@@ -1,0 +1,436 @@
+<!DOCTYPE html><html class="light" lang="id"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Roomify | Mahasiswa Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<!-- Theme Configuration -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "inverse-surface": "#2e3039",
+                    "surface": "#faf8ff",
+                    "on-danger-container": "#7F1D1D",
+                    "primary-hover": "#1D4ED8",
+                    "on-tertiary-container": "#ffede6",
+                    "primary-fixed": "#dbe1ff",
+                    "outline": "#737686",
+                    "secondary-container": "#d5e3fc",
+                    "surface-container-low": "#f3f3fe",
+                    "primary-fixed-dim": "#b4c5ff",
+                    "tertiary-fixed": "#ffdbcd",
+                    "primary": "#004ac6",
+                    "success-container": "#DCFCE7",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-container-high": "#e7e7f3",
+                    "on-tertiary-fixed": "#360f00",
+                    "warning-container": "#FEF3C7",
+                    "on-secondary-fixed": "#0d1c2e",
+                    "surface-dim": "#d9d9e5",
+                    "danger-container": "#FEE2E2",
+                    "surface-subtle": "#F1F5F9",
+                    "on-primary-container": "#1E3A8A",
+                    "on-secondary": "#ffffff",
+                    "inverse-primary": "#b4c5ff",
+                    "background": "#faf8ff",
+                    "on-secondary-container": "#57657a",
+                    "text-muted": "#64748B",
+                    "error-container": "#ffdad6",
+                    "surface-variant": "#e1e2ed",
+                    "error": "#ba1a1a",
+                    "on-error": "#ffffff",
+                    "on-tertiary-fixed-variant": "#7d2d00",
+                    "surface-container": "#ededf9",
+                    "on-background": "#191b23",
+                    "warning": "#B45309",
+                    "on-primary": "#ffffff",
+                    "on-warning-container": "#78350F",
+                    "success": "#15803D",
+                    "on-success-container": "#14532D",
+                    "outline-variant": "#c3c6d7",
+                    "secondary": "#515f74",
+                    "surface-bright": "#faf8ff",
+                    "on-tertiary": "#ffffff",
+                    "surface-tint": "#0053db",
+                    "tertiary-container": "#bc4800",
+                    "on-primary-fixed": "#00174b",
+                    "on-primary-fixed-variant": "#003ea8",
+                    "surface-container-highest": "#e1e2ed",
+                    "on-surface": "#191b23",
+                    "inverse-on-surface": "#f0f0fb",
+                    "on-secondary-fixed-variant": "#3a485b",
+                    "neutral-container": "#F1F5F9",
+                    "on-surface-variant": "#434655",
+                    "primary-container": "#2563eb",
+                    "danger": "#B91C1C",
+                    "text-primary": "#0F172A",
+                    "secondary-fixed": "#d5e3fc",
+                    "tertiary-fixed-dim": "#ffb596",
+                    "secondary-fixed-dim": "#b9c7df",
+                    "border-strong": "#CBD5E1",
+                    "on-error-container": "#93000a",
+                    "info-container": "#DBEAFE",
+                    "tertiary": "#943700"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "8": "32px",
+                    "10": "40px",
+                    "4": "16px",
+                    "6": "24px",
+                    "16": "64px",
+                    "2": "8px",
+                    "margin-desktop": "24px",
+                    "gutter": "16px",
+                    "margin-mobile": "16px",
+                    "5": "20px",
+                    "12": "48px",
+                    "1": "4px",
+                    "3": "12px"
+            },
+            "fontFamily": {
+                    "h3": ["Inter"],
+                    "h1": ["Inter"],
+                    "label": ["Inter"],
+                    "display": ["Inter"],
+                    "display-mobile": ["Inter"],
+                    "caption": ["Inter"],
+                    "body-md": ["Inter"],
+                    "h1-mobile": ["Inter"],
+                    "body-sm": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "h2": ["Inter"]
+            },
+            "fontSize": {
+                    "h3": ["1.25rem", {"lineHeight": "1.75rem", "fontWeight": "600"}],
+                    "h1": ["2rem", {"lineHeight": "2.5rem", "letterSpacing": "-0.025em", "fontWeight": "700"}],
+                    "label": ["0.875rem", {"lineHeight": "1.25rem", "fontWeight": "600"}],
+                    "display": ["2.25rem", {"lineHeight": "2.75rem", "letterSpacing": "-0.03em", "fontWeight": "700"}],
+                    "display-mobile": ["28px", {"lineHeight": "34px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "caption": ["0.75rem", {"lineHeight": "1rem", "fontWeight": "500"}],
+                    "body-md": ["0.875rem", {"lineHeight": "1.375rem", "fontWeight": "400"}],
+                    "h1-mobile": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "700"}],
+                    "body-sm": ["0.8125rem", {"lineHeight": "1.25rem", "fontWeight": "400"}],
+                    "body-lg": ["1rem", {"lineHeight": "1.625rem", "fontWeight": "400"}],
+                    "h2": ["1.5rem", {"lineHeight": "2rem", "letterSpacing": "-0.015em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined {
+          font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 1.5rem;
+        }
+        @media (max-width: 768px) {
+            .bento-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(225, 226, 237, 0.5);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface">
+<!-- SideNavBar (Shared Component) -->
+<aside class="hidden md:flex flex-col h-full w-64 p-6 fixed left-0 top-0 bg-surface border-r border-outline-variant z-40">
+<div class="mb-10">
+<span class="text-h2 font-h2 text-primary">Roomify</span>
+<p class="font-label text-label text-secondary opacity-70">Campus Management</p>
+</div>
+<nav class="flex-1 space-y-2">
+<!-- Dashboard (Active) -->
+<a class="flex items-center gap-3 px-4 py-3 text-primary font-bold border-r-4 border-primary transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-label text-label">Dashboard</span>
+</a>
+<!-- Cari Ruangan -->
+<a class="flex items-center gap-3 px-4 py-3 text-secondary hover:bg-surface-container-low transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+<span class="font-label text-label">Cari Ruangan</span>
+</a>
+<!-- Peminjaman Saya -->
+<a class="flex items-center gap-3 px-4 py-3 text-secondary hover:bg-surface-container-low transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="history">history</span>
+<span class="font-label text-label">Peminjaman Saya</span>
+</a>
+<!-- Profil -->
+<a class="flex items-center gap-3 px-4 py-3 text-secondary hover:bg-surface-container-low transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-label text-label">Profil</span>
+</a>
+</nav>
+<div class="mt-auto pt-6 border-t border-outline-variant">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-primary" data-icon="account_circle">account_circle</span>
+</div>
+<div>
+<p class="font-label text-label text-on-surface">Dafa</p>
+<p class="text-xs text-secondary">Student ID: 210853</p>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="ml-0 md:ml-64 min-h-screen pb-20 md:pb-0">
+<!-- TopAppBar (Shared Component) -->
+<header class="flex justify-between items-center h-16 px-6 bg-surface border-b border-outline-variant sticky top-0 z-30">
+<div class="flex items-center gap-4">
+<nav class="flex items-center gap-2 text-on-surface-variant font-body-md text-body-md">
+<span class="text-secondary">Apps</span>
+<span class="material-symbols-outlined text-xs">chevron_right</span>
+<span class="text-primary font-bold">Dashboard</span>
+</nav>
+</div>
+<div class="flex items-center gap-6">
+<div class="hidden md:flex items-center gap-1 text-on-surface-variant cursor-pointer hover:text-primary-hover transition-opacity duration-150">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</div>
+<div class="hidden md:flex items-center gap-1 text-on-surface-variant cursor-pointer hover:text-primary-hover transition-opacity duration-150">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+</div>
+<div class="flex items-center gap-2 cursor-pointer transition-opacity duration-150">
+<img class="w-8 h-8 rounded-full border border-outline-variant" data-alt="A professional headshot of a young male Indonesian student in a university library setting, soft natural window lighting, shallow depth of field, high-end academic atmosphere, corporate modern style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBFZdKreRkoiuNcdlhztNTnB7BUf01Zrx_ENFXXUmcMFzbTVcqf4svo8-a0-F0BrnXB_f5DxBShIIltBVvdghARJHmey_d09Pz-YVk47DPcL-e_Pi6VOpuIGS0mYeE6aw9gluUMYeqO_cTCdU8qJ1T2MUk5K5KiHImrMulh3NgH8xJ8Zt_dq23AvJLyZ4KPk_GIz6RWIRQ9L0EU43y_ZjF34eERbHdDBPW8dzG7UaEoYz8k2HA2dBLqHg">
+</div>
+</div>
+</header>
+<!-- Page Canvas -->
+<div class="p-6 md:p-8 max-w-7xl mx-auto space-y-8">
+<!-- Hero & Primary Action Section -->
+<section class="relative overflow-hidden rounded-xl bg-primary-container p-8 md:p-12 text-white">
+<div class="absolute top-0 right-0 w-1/3 h-full opacity-20 pointer-events-none">
+
+</div>
+<div class="relative z-10 max-w-2xl">
+<h1 class="font-display text-display mb-2">Selamat datang, Dafa</h1>
+<p class="font-body-lg text-body-lg text-primary-fixed mb-8 opacity-90">Siap untuk produktif hari ini? Temukan dan pesan ruangan untuk kegiatan belajarmu dengan mudah.</p>
+<div class="flex flex-wrap gap-4">
+<button class="bg-surface text-primary px-8 py-3 rounded-xl font-label text-label flex items-center gap-2 hover:bg-surface-container-high transition-all shadow-lg shadow-black/10">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+                            Cari Ruangan
+                        </button>
+<button class="bg-primary/20 backdrop-blur-md border border-white/20 text-white px-8 py-3 rounded-xl font-label text-label flex items-center gap-2 hover:bg-primary/30 transition-all">
+                            Lihat Panduan
+                        </button>
+</div>
+</div>
+</section>
+<!-- Summary Cards & Featured Task (Bento) -->
+<div class="bento-grid">
+<!-- Summary Section -->
+<div class="grid grid-cols-2 md:grid-cols-2 gap-4 col-span-12 lg:col-span-8">
+<div class="bg-surface border border-outline-variant p-6 rounded-xl hover:border-primary/50 transition-colors cursor-default">
+<div class="w-10 h-10 rounded-lg bg-info-container flex items-center justify-center mb-4 text-primary">
+<span class="material-symbols-outlined" data-icon="assignment">assignment</span>
+</div>
+<p class="text-secondary font-label text-label">Total Peminjaman</p>
+<p class="text-h1 font-h1 mt-1 text-on-surface">12</p>
+</div>
+<div class="bg-surface border border-outline-variant p-6 rounded-xl hover:border-warning/50 transition-colors cursor-default">
+<div class="w-10 h-10 rounded-lg bg-warning-container flex items-center justify-center mb-4 text-warning">
+<span class="material-symbols-outlined" data-icon="pending">pending</span>
+</div>
+<p class="text-secondary font-label text-label">Menunggu</p>
+<p class="text-h1 font-h1 mt-1 text-on-surface">2</p>
+</div>
+<div class="bg-surface border border-outline-variant p-6 rounded-xl hover:border-success/50 transition-colors cursor-default">
+<div class="w-10 h-10 rounded-lg bg-success-container flex items-center justify-center mb-4 text-success">
+<span class="material-symbols-outlined" data-icon="check_circle">check_circle</span>
+</div>
+<p class="text-secondary font-label text-label">Disetujui</p>
+<p class="text-h1 font-h1 mt-1 text-on-surface">1</p>
+</div>
+<div class="bg-surface border border-outline-variant p-6 rounded-xl hover:border-secondary/50 transition-colors cursor-default">
+<div class="w-10 h-10 rounded-lg bg-secondary-container flex items-center justify-center mb-4 text-secondary">
+<span class="material-symbols-outlined" data-icon="task_alt">task_alt</span>
+</div>
+<p class="text-secondary font-label text-label">Selesai</p>
+<p class="text-h1 font-h1 mt-1 text-on-surface">9</p>
+</div>
+</div>
+<!-- Featured Upcoming Card -->
+<div class="col-span-12 lg:col-span-4 glass-card p-6 rounded-xl relative overflow-hidden flex flex-col justify-between border-primary/20 shadow-xl shadow-primary/5">
+<div class="relative z-10">
+<div class="flex justify-between items-start mb-6">
+<span class="bg-primary-container text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Mendatang</span>
+<span class="material-symbols-outlined text-primary-hover animate-pulse" data-icon="event">event</span>
+</div>
+<h3 class="font-h3 text-h3 text-on-surface mb-2">Ruang Seminar A</h3>
+<p class="text-secondary font-body-md text-body-md flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">schedule</span>
+                            Besok, 09:00 - 11:00
+                        </p>
+<p class="text-secondary font-body-md text-body-md flex items-center gap-2 mt-1">
+<span class="material-symbols-outlined text-sm">location_on</span>
+                            Gedung C, Lantai 3
+                        </p>
+</div>
+<div class="relative z-10 pt-6">
+<button class="w-full bg-primary text-white py-3 rounded-lg font-label text-label hover:bg-primary-hover transition-colors">
+                            Lihat Detail Tiket
+                        </button>
+</div>
+<!-- Subtle background mesh -->
+<div class="absolute -bottom-10 -right-10 w-32 h-32 bg-primary/10 rounded-full blur-2xl"></div>
+</div>
+</div>
+<!-- Recent Bookings List -->
+<section class="space-y-4">
+<div class="flex justify-between items-end">
+<div>
+<h2 class="font-h2 text-h2 text-on-surface">Peminjaman Terbaru</h2>
+<p class="text-secondary font-body-md text-body-md">Status pemesanan ruangan Anda saat ini.</p>
+</div>
+<a class="text-primary font-label text-label hover:underline" href="#">Lihat Semua</a>
+</div>
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden">
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container border-b border-outline-variant">
+<th class="px-6 py-4 font-label text-label text-on-surface-variant">Ruangan</th>
+<th class="px-6 py-4 font-label text-label text-on-surface-variant">Tanggal &amp; Waktu</th>
+<th class="px-6 py-4 font-label text-label text-on-surface-variant">Status</th>
+<th class="px-6 py-4 font-label text-label text-on-surface-variant">Aksi</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/30">
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="A modern university study room with minimalist glass walls, sleek wooden tables, and bright natural lighting. Professional academic workspace aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBx2B8souf6Yyajw29_L35XCV98j9YO94H4QsNdZDuswl-WqVXSrttkKnxsZqk7Qxo4L7ZRYXdomHB5Lk9q5rKCn_CQFh9fIj4j7G5CFhiSBcsBY7T4gWDNVE_i89DDAOHBC1OSk0lRSAwJEUceVD2EzcT3C5hN4TaJoqH-DZQllz0VYHEpJPDC3FUhEFfS8KTCsVvP9n1PsjpUSdkPtNTziUwwLBcbtulddeMVOaenghdRBUU6T8gSgQ">
+</div>
+<div>
+<p class="font-label text-label text-on-surface">Lab Komputer Dasar</p>
+<p class="text-xs text-secondary">Gedung D, Lt. 2</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4">
+<p class="font-body-md text-body-md text-on-surface">24 Okt 2023</p>
+<p class="text-xs text-secondary">13:00 - 15:00 WIB</p>
+</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-success-container text-success text-xs font-bold">
+<span class="w-1.5 h-1.5 rounded-full bg-success"></span>
+                                            Disetujui
+                                        </span>
+</td>
+<td class="px-6 py-4">
+<button class="material-symbols-outlined text-secondary hover:text-primary transition-colors" data-icon="more_vert">more_vert</button>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="Small group discussion area with ergonomic chairs and whiteboard, contemporary university interior design, soft ambient lighting, clean lines." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYy6b6wjW5fQq8O1buhthvN06odV8y5-p__KUEFVjkgXRLo5ogg1JmIGf2CYAgkooA10ssSDV9mts-YG5cKeCmxm3ObfEkoxkeJfPKWvghiV_7qDkeGdbgh55PkFTrropQkWfAoYSmwHlXLEMMChXvMVxpfrPNT1irRPgEQC4u0Lah_Un5ZEatQGn7zLYtYQ6jC1icUpZBK2dX8iDcSoVY8CuBc2S-aM9SNGmH2k_odugE4eSHP3fF9Q">
+</div>
+<div>
+<p class="font-label text-label text-on-surface">Ruang Diskusi 4</p>
+<p class="text-xs text-secondary">Perpustakaan Pusat</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4">
+<p class="font-body-md text-body-md text-on-surface">25 Okt 2023</p>
+<p class="text-xs text-secondary">10:00 - 12:00 WIB</p>
+</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-warning-container text-warning text-xs font-bold">
+<span class="w-1.5 h-1.5 rounded-full bg-warning"></span>
+                                            Menunggu Persetujuan
+                                        </span>
+</td>
+<td class="px-6 py-4">
+<button class="material-symbols-outlined text-secondary hover:text-primary transition-colors" data-icon="more_vert">more_vert</button>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="A clean and bright university classroom with tiered seating, high ceilings, and large windows. Modern architectural photography, academic setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-5QHl6Pz9jdNpoeNyU1LPwsG9Jjhj_tjY4wkFLmFQg0CUQFdVCtVNHgzLjLTvfnMEvfQHMW7hT0n6_Fb_5aS7X-zQh0vTrMOvD1l1ZoJd7RhMlKAdHoEavSoI9zdpIIp6C8xxDhdr0_-b66oolO5UHsV3nx7nXRPIbAIW_WKds14g6C_aZpiP9hi7q-mM8rZXLRi--vmBupbd3P8OB0wiPu7uTo3I3pj86PLoaGAOjkIpb6pnCwc_tw">
+</div>
+<div>
+<p class="font-label text-label text-on-surface">Auditorium Utama</p>
+<p class="text-xs text-secondary">Gedung Rektorat</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4">
+<p class="font-body-md text-body-md text-on-surface">20 Okt 2023</p>
+<p class="text-xs text-secondary">08:00 - 10:00 WIB</p>
+</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container-highest text-secondary text-xs font-bold">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                                            Selesai
+                                        </span>
+</td>
+<td class="px-6 py-4">
+<button class="material-symbols-outlined text-secondary hover:text-primary transition-colors" data-icon="more_vert">more_vert</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+</div>
+</main>
+<!-- BottomNavBar (Shared Component for Mobile) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-2 bg-surface border-t border-outline-variant shadow-lg md:hidden">
+<a class="flex flex-col items-center justify-center bg-secondary-container text-primary rounded-xl px-3 py-1 scale-95 transition-transform duration-100" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-caption text-caption-mobile">Dashboard</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant active:bg-surface-container-high transition-transform duration-100" href="#">
+<span class="material-symbols-outlined" data-icon="meeting_room">meeting_room</span>
+<span class="font-caption text-caption-mobile">Ruangan</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant active:bg-surface-container-high transition-transform duration-100" href="#">
+<span class="material-symbols-outlined" data-icon="assignment">assignment</span>
+<span class="font-caption text-caption-mobile">Peminjaman</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant active:bg-surface-container-high transition-transform duration-100" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-caption text-caption-mobile">Profil</span>
+</a>
+</nav>
+<!-- Micro-interaction Script -->
+<script>
+        document.querySelectorAll('.hover\\:bg-surface-container-low').forEach(item => {
+            item.addEventListener('mousedown', () => {
+                item.style.transform = 'scale(0.98)';
+            });
+            item.addEventListener('mouseup', () => {
+                item.style.transform = 'scale(1)';
+            });
+            item.addEventListener('mouseleave', () => {
+                item.style.transform = 'scale(1)';
+            });
+        });
+    </script>
+</body></html>
